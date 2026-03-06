@@ -4,22 +4,24 @@ using System.Collections;
 
 public class Zombie : MonoBehaviour
 {
-    [Header("Zombi Statlarý")]
+    [Header("Zombi Statlarï¿½")]
     public float health = 4f;
 
-    [Header("Hareket Ayarlarý")]
-    public float moveSpeed = 2f;        // Sola gitme hýzý
-    public float dalgaGenligi = 0.5f;  // Ne kadar yukarý/aþaðý sapacaðý (Yükseklik)
-    public float dalgaFrekansi = 4f;    // Dalgalanma hýzý (Ne kadar hýzlý sallanacaðý)
+    [Header("Hareket Ayarlarï¿½")]
+    public float moveSpeed = 2f;        // Sola gitme hï¿½zï¿½
+    public float dalgaGenligi = 0.5f;  // Ne kadar yukarï¿½/aï¿½aï¿½ï¿½ sapacaï¿½ï¿½ (Yï¿½kseklik)
+    public float dalgaFrekansi = 4f;    // Dalgalanma hï¿½zï¿½ (Ne kadar hï¿½zlï¿½ sallanacaï¿½ï¿½)
 
     public GameObject Brain;
-    private float startY; // Zombinin doðduðu orijinal Y pozisyonu
+    private float startY; // Zombinin doï¿½duï¿½u orijinal Y pozisyonu
     private SpriteRenderer sr;
 
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         startY = transform.position.y;
+        string[] groans = { "Groan1", "Groan2", "Groan3" };
+        AudioManager.Instance.PlayRandom(groans, 0.3f);
     }
 
     private void Update()
@@ -40,6 +42,7 @@ public class Zombie : MonoBehaviour
     {
         health -= damageAmount;
         StartCoroutine(HasarEfekti());
+        AudioManager.Instance.Play("ZombieHit", 0.1f);
         if (health <= 0)
         {
             Die();
@@ -68,9 +71,9 @@ public class Zombie : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
-            sr.color = Color.red;    // Kýrmýzý yap
+            sr.color = Color.red;    // Kï¿½rmï¿½zï¿½ yap
             yield return new WaitForSeconds(0.1f);
-            sr.color = Color.green; // Eskiye döndür
+            sr.color = Color.green; // Eskiye dï¿½ndï¿½r
             yield return new WaitForSeconds(0.1f);
         }
     }

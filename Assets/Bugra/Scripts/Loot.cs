@@ -2,26 +2,27 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-    public int value = 1; // Her bir parçanýn deðeri
+    public int value = 1; // Her bir parï¿½anï¿½n deï¿½eri
 
     private void Start()
     {
-        // Zombi öldüðünde parça yere dümdüz düþmesin, rastgele bir yöne hafifçe fýrlasýn
+        // Zombi ï¿½ldï¿½ï¿½ï¿½nde parï¿½a yere dï¿½mdï¿½z dï¿½ï¿½mesin, rastgele bir yï¿½ne hafifï¿½e fï¿½rlasï¿½n
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            float randomX = Random.Range(-2f, 2f); // Saða veya sola
-            rb.AddForce(new Vector2(randomX, 3f), ForceMode2D.Impulse); // Yukarý doðru fýrlat
+            float randomX = Random.Range(-2f, 2f); // Saï¿½a veya sola
+            rb.AddForce(new Vector2(randomX, 3f), ForceMode2D.Impulse); // Yukarï¿½ doï¿½ru fï¿½rlat
         }
     }
 
-    // Fareyle (veya mobilde parmakla) objenin üzerine týklandýðýnda çalýþýr
+    // Fareyle (veya mobilde parmakla) objenin ï¿½zerine tï¿½klandï¿½ï¿½ï¿½nda ï¿½alï¿½ï¿½ï¿½r
     private void OnMouseDown()
     {
-        // Parayý ekle
+        // Parayï¿½ ekle
         CurrencyManager.Instance.AddScrap(value);
+        AudioManager.Instance.Play("ScrapCollect", 0.05f);
 
-        // Objeyi yok et (Ýstersen buraya küçük bir toplanma sesi/efekti de ekleyebilirsin)
+        // Objeyi yok et (ï¿½stersen buraya kï¿½ï¿½ï¿½k bir toplanma sesi/efekti de ekleyebilirsin)
         Destroy(gameObject);
     }
 }

@@ -46,6 +46,7 @@ public class BaseHealth : MonoBehaviour
     {
         currentHealth -= amount;
         if (currentHealth <= 0) currentHealth = 0;
+        AudioManager.Instance.Play("TurretDamage", 0.15f);
 
         UpdateUI();
 

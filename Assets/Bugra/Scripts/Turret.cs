@@ -51,26 +51,48 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
+        if (currentAmmo > 0)
+        {
+            currentAmmo--;
+          
+            AudioManager.Instance.Play("Shoot", 0.07f); 
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+        else
+        {
+          
+            AudioManager.Instance.Play("EmptyClick", 0.2f);
+        }
         currentAmmo--;
         UpdateUI();
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        
     }
 
     IEnumerator Reload()
     {
         isReloading = true;
+
+       
+        AudioManager.Instance.Play("ReloadStart");
+    
         reloadSlider.gameObject.SetActive(true);
         reloadSlider.maxValue = reloadTime;
         reloadSlider.value = 0;
 
         float timer = 0;
+
+      
         while (timer < reloadTime)
         {
             timer += Time.deltaTime;
             reloadSlider.value = timer; 
-            yield return null;
+            yield return null; 
         }
 
+      
+        AudioManager.Instance.Play("ReloadEnd");
+    
         currentAmmo = maxAmmo;
         isReloading = false;
         reloadSlider.gameObject.SetActive(false);
