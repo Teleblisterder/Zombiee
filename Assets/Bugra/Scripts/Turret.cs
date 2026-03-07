@@ -35,14 +35,15 @@ public class Turret : MonoBehaviour
 
         RotateTowardsMouse();
 
-        
+       
         if (currentAmmo <= 0 || (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo))
         {
             StartCoroutine(Reload());
             return;
         }
 
-        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+        
+        if (Input.GetMouseButton(0) && Time.time >= nextFireTime && currentAmmo > 0)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
@@ -53,27 +54,25 @@ public class Turret : MonoBehaviour
     {
         if (currentAmmo > 0)
         {
-            currentAmmo--;
+            currentAmmo--; 
+            UpdateUI(); 
           
             AudioManager.Instance.Play("Shoot", 0.07f); 
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
         else
         {
-          
+         
             AudioManager.Instance.Play("EmptyClick", 0.2f);
+            currentAmmo = 0; 
+            UpdateUI();
         }
-        currentAmmo--;
-        UpdateUI();
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        
     }
 
     IEnumerator Reload()
     {
         isReloading = true;
 
-       
         AudioManager.Instance.Play("ReloadStart");
     
         reloadSlider.gameObject.SetActive(true);
@@ -82,7 +81,6 @@ public class Turret : MonoBehaviour
 
         float timer = 0;
 
-      
         while (timer < reloadTime)
         {
             timer += Time.deltaTime;
@@ -90,7 +88,6 @@ public class Turret : MonoBehaviour
             yield return null; 
         }
 
-      
         AudioManager.Instance.Play("ReloadEnd");
     
         currentAmmo = maxAmmo;
@@ -101,7 +98,9 @@ public class Turret : MonoBehaviour
 
     public void UpdateUI()
     {
-        ammoText.text = currentAmmo + " / " + maxAmmo;
+        
+        int displayAmmo = Mathf.Max(0, currentAmmo);
+        ammoText.text = displayAmmo + " / " + maxAmmo;
     }
 
     void RotateTowardsMouse()
