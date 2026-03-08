@@ -169,7 +169,7 @@ MonoBehaviour:
     spawnRate: 1
   - waveName: Final
     normalZombieCount: 25
-    fastZombieCount: 0
+    fastZombieCount: 5
     tankZombieCount: 5
     spawnRate: 0.7
   timeBetweenWaves: 5
@@ -376,7 +376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 119806025668650413, guid: dce5059ae1b6c0243af16f36344880cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.29
+      value: 4.32
       objectReference: {fileID: 0}
     - target: {fileID: 119806025668650413, guid: dce5059ae1b6c0243af16f36344880cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -432,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724094074559574077, guid: dce5059ae1b6c0243af16f36344880cc, type: 3}
       propertyPath: m_Size.y
-      value: 4.4503136
+      value: 5.9586825
       objectReference: {fileID: 0}
     - target: {fileID: 3724094074559574077, guid: dce5059ae1b6c0243af16f36344880cc, type: 3}
       propertyPath: m_Offset.x
@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724094074559574077, guid: dce5059ae1b6c0243af16f36344880cc, type: 3}
       propertyPath: m_Offset.y
-      value: -1.7251575
+      value: -2.4793417
       objectReference: {fileID: 0}
     - target: {fileID: 6386532358671188654, guid: dce5059ae1b6c0243af16f36344880cc, type: 3}
       propertyPath: m_Color.b
@@ -1678,6 +1678,14 @@ PrefabInstance:
     - target: {fileID: 714224888793610768, guid: e27f8e4b2fcb8354fa4ca363d54ba7df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508875669448338265, guid: e27f8e4b2fcb8354fa4ca363d54ba7df, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9487154
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508875669448338265, guid: e27f8e4b2fcb8354fa4ca363d54ba7df, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 506
       objectReference: {fileID: 0}
     - target: {fileID: 2940452985407669777, guid: e27f8e4b2fcb8354fa4ca363d54ba7df, type: 3}
       propertyPath: m_LocalScale.x

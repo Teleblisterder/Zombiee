@@ -73,7 +73,7 @@ public class Zombie : MonoBehaviour
         {
             sr.color = Color.red;    // K�rm�z� yap
             yield return new WaitForSeconds(0.1f);
-            sr.color = Color.green; // Eskiye d�nd�r
+            sr.color = Color.white; // Eskiye d�nd�r
             yield return new WaitForSeconds(0.1f);
         }
     }
