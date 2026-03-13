@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-<<<<<<< HEAD
 using UnityEngine.UI;
 using TMPro;
 
+// --- 1. DALGA VERÄ° YAPISI (Bu kÄ±sÄ±m eksik olduÄŸu iÃ§in hata alÄ±yordun) ---
 [System.Serializable]
 public class Wave
 {
@@ -13,121 +13,94 @@ public class Wave
     public int fastZombieCount;
     public int tankZombieCount;
     public float spawnRate; 
-=======
-
-// Bu sýnýfýn Inspector'da görünmesi için System.Serializable ekliyoruz
-[System.Serializable]
-public class Wave
-{
-    public string waveName; // Dalganýn adý (Örn: "Dalga 1")
-    public int normalZombieCount;
-    public int fastZombieCount;
-    public int tankZombieCount;
-    public float spawnRate; // Bu dalgada zombilerin çýkma aralýðý (saniye)
->>>>>>> origin/bugra
 }
 
+// --- 2. ANA SPAWNER SINIFI ---
 public class WaveSpawner : MonoBehaviour
 {
-<<<<<<< HEAD
-    [Header("Zombi PrefablarÃ½")]
-=======
-    [Header("Zombi Prefablarý")]
->>>>>>> origin/bugra
+    [Header("Zombi PrefablarÄ±")]
     public GameObject normalZombie;
     public GameObject fastZombie;
     public GameObject tankZombie;
 
-<<<<<<< HEAD
-    [Header("Dalga AyarlarÃ½")]
+    [Header("Dalga AyarlarÄ±")]
     public Wave[] waves; 
     public float timeBetweenWaves = 5f; 
 
-    [Header("Spawn NoktasÃ½ (Y Ekseni SÃ½nÃ½rlarÃ½)")]
+    [Header("Spawn NoktasÄ±")]
     public float minY; 
     public float maxY; 
     public float spawnXPosition; 
 
-    [Header("UI ReferanslarÃ½")]
+    [Header("UI ReferanslarÄ±")]
     public Slider waveProgressBar;   
     public TextMeshProUGUI waveText; 
-    public float barSmoothSpeed = 2f;
+    public float barSmoothSpeed = 2f; 
 
     private int currentWaveIndex = 0;
     private bool isSpawning = false;
     private bool isVictoryTriggered = false;
 
-   
     private int totalZombiesInLevel = 0;
     private int spawnedZombiesCount = 0;
     private float targetProgress = 0f;
 
-=======
-    [Header("Dalga Ayarlarý")]
-    public Wave[] waves; // Tüm dalgalarý tutacaðýmýz dizi
-    public float timeBetweenWaves = 5f; // Dalgalar arasý bekleme süresi
-
-    [Header("Spawn Noktasý (Y Ekseni Sýnýrlarý)")]
-    public float minY; // Zombinin çýkabileceði en alt nokta
-    public float maxY; // Zombinin çýkabileceði en üst nokta
-    public float spawnXPosition; // Ekranýn sað tarafýndaki X koordinatý
-
-    private int currentWaveIndex = 0;
-    private bool isSpawning = false;
-
-    // Sahnede kalan zombileri saymak için statik deðiþken
->>>>>>> origin/bugra
     public static int enemiesAlive = 0;
 
     void Start()
     {
-<<<<<<< HEAD
+        // Restart/BaÅŸlangÄ±Ã§ temizliÄŸi
         enemiesAlive = 0;
+        spawnedZombiesCount = 0;
+        targetProgress = 0f;
         isVictoryTriggered = false;
+        currentWaveIndex = 0;
 
-       
+        // 1. Toplam zombiyi hesapla
         totalZombiesInLevel = 0;
         foreach (Wave w in waves)
         {
             totalZombiesInLevel += w.normalZombieCount + w.fastZombieCount + w.tankZombieCount;
         }
 
+        // 2. UI ZORLA SIFIRLA VE AÃ‡
         if (waveProgressBar != null)
         {
+            waveProgressBar.minValue = 0f;
             waveProgressBar.maxValue = 1f; 
-            waveProgressBar.value = 0f;
+            waveProgressBar.value = 0f; // Slider'Ä±n 1'den baÅŸlamasÄ±nÄ± engeller
         }
 
-=======
-        // Oyun baþladýðýnda ilk dalgayý çaðýr
->>>>>>> origin/bugra
+        if (waveText != null) 
+        {
+            waveText.gameObject.SetActive(true); // Kapanma sorununu Ã§Ã¶zer
+            waveText.text = "BÃ¶lÃ¼m: 1 / " + waves.Length;
+        }
+
         StartCoroutine(StartNextWave());
     }
 
     void Update()
     {
-<<<<<<< HEAD
-       
+        // 3. BARIN AKICI DOLMASI (Mathf.Lerp ile pÃ¼rÃ¼zsÃ¼zleÅŸtirildi)
         if (waveProgressBar != null)
         {
-            waveProgressBar.value = Mathf.MoveTowards(waveProgressBar.value, targetProgress, Time.deltaTime * (barSmoothSpeed / 10f));
+            waveProgressBar.value = Mathf.Lerp(waveProgressBar.value, targetProgress, Time.deltaTime * barSmoothSpeed);
         }
 
+        // ZAFER KONTROLÃœ
         if (!isSpawning && enemiesAlive <= 0 && currentWaveIndex >= waves.Length)
         {
             if (!isVictoryTriggered)
             {
                 isVictoryTriggered = true;
-                GameFlowManager.Instance.ShowVictory();
+                if(GameFlowManager.Instance != null) GameFlowManager.Instance.ShowVictory();
             }
             return;
         }
 
+        // YENÄ° DALGA KONTROLÃœ
         if (!isSpawning && enemiesAlive <= 0 && currentWaveIndex < waves.Length)
-=======
-        // Eðer o an spawn iþlemi bittiyse, sahnede zombi kalmadýysa ve tüm dalgalar bitmediyse yeni dalgaya geç
-        if (!isSpawning && enemiesAlive == 0 && currentWaveIndex < waves.Length)
->>>>>>> origin/bugra
         {
             StartCoroutine(StartNextWave());
         }
@@ -136,81 +109,44 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator StartNextWave()
     {
         isSpawning = true;
-<<<<<<< HEAD
         
         if (waveText != null) 
             waveText.text = "BÃ¶lÃ¼m: " + (currentWaveIndex + 1) + " / " + waves.Length;
 
         Wave currentWave = waves[currentWaveIndex];
-
         yield return new WaitForSeconds(timeBetweenWaves);
 
         List<GameObject> zombiesToSpawn = new List<GameObject>();
-=======
-        Wave currentWave = waves[currentWaveIndex];
-
-        // Yeni dalga baþlamadan önce oyuncuya nefes alma süresi ver
-        yield return new WaitForSeconds(timeBetweenWaves);
-
-        // Bu dalgada doðacak zombileri bir "havuza" atýyoruz
-        List<GameObject> zombiesToSpawn = new List<GameObject>();
-
->>>>>>> origin/bugra
         for (int i = 0; i < currentWave.normalZombieCount; i++) zombiesToSpawn.Add(normalZombie);
         for (int i = 0; i < currentWave.fastZombieCount; i++) zombiesToSpawn.Add(fastZombie);
         for (int i = 0; i < currentWave.tankZombieCount; i++) zombiesToSpawn.Add(tankZombie);
 
-<<<<<<< HEAD
         ShuffleList(zombiesToSpawn);
 
         foreach (GameObject zombie in zombiesToSpawn)
         {
             SpawnZombie(zombie);
             
-           
+            // PROGRESS GÃœNCELLEME
             spawnedZombiesCount++;
-            targetProgress = (float)spawnedZombiesCount / totalZombiesInLevel;
+            if(totalZombiesInLevel > 0)
+                targetProgress = (float)spawnedZombiesCount / totalZombiesInLevel;
 
             yield return new WaitForSeconds(currentWave.spawnRate);
         }
 
-=======
-        // Zombiler hep ayný sýrayla (önce normaller, sonra hýzlýlar vs.) gelmesin diye listeyi karýþtýrýyoruz
-        ShuffleList(zombiesToSpawn);
-
-        // Zombileri tek tek doður
-        foreach (GameObject zombie in zombiesToSpawn)
-        {
-            SpawnZombie(zombie);
-            yield return new WaitForSeconds(currentWave.spawnRate);
-        }
-
-        // Tüm zombiler doðdu, dalga indeksini artýr
->>>>>>> origin/bugra
         currentWaveIndex++;
         isSpawning = false;
     }
 
     void SpawnZombie(GameObject zombiePrefab)
     {
-<<<<<<< HEAD
         float randomY = Random.Range(minY, maxY);
         Vector3 spawnPosition = new Vector3(spawnXPosition, randomY, 0f);
         Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
         enemiesAlive++;
     }
 
-=======
-        // Rastgele bir Y yüksekliði belirle
-        float randomY = Random.Range(minY, maxY);
-        Vector3 spawnPosition = new Vector3(spawnXPosition, randomY, 0f);
-
-        Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
-        enemiesAlive++; // Zombi doðdu, yaþayan zombi sayacýný artýr
-    }
-
-    // Listeyi rastgele karýþtýran küçük bir yardýmcý fonksiyon
->>>>>>> origin/bugra
     void ShuffleList(List<GameObject> list)
     {
         for (int i = 0; i < list.Count; i++)

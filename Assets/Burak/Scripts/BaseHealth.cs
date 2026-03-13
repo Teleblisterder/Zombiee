@@ -29,37 +29,31 @@ public class BaseHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
-        Debug.Log("Bir şey çarptı: " + collision.gameObject.name + " Tag: " + collision.tag);
+        // Debug.Log("Temas: " + collision.gameObject.name);
 
         if (collision.CompareTag("Enemy") && !isGameOver)
         {
-            TakeDamage(10);
-        
-           
-            WaveSpawner.enemiesAlive--;
-<<<<<<< HEAD
           
-=======
-            Destroy(collision.gameObject);
->>>>>>> origin/bugra
         }
     }
 
     public void TakeDamage(int amount)
     {
+        if (isGameOver) return;
+
         currentHealth -= amount;
         if (currentHealth <= 0) currentHealth = 0;
-        AudioManager.Instance.Play("TurretDamage", 0.15f);
-<<<<<<< HEAD
+
+        // SES: Hasar alma sesi
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.Play("TurretDamage", 0.15f);
        
+        // SENİN SİSTEMİN: İlk hasarda Slow-Mo Tutorial'ı başlatır
         if (AbilityManager.Instance != null)
         {
             AbilityManager.Instance.StartTutorial();
         }
-=======
 
->>>>>>> origin/bugra
         UpdateUI();
 
         if (currentHealth <= 0)
@@ -76,9 +70,11 @@ public class BaseHealth : MonoBehaviour
 
     void GameOver()
     {
+        if (isGameOver) return;
         isGameOver = true;
+        
         // GameFlowManager'daki fonksiyonu çağırıyoruz
-        GameFlowManager.Instance.ShowGameOver();
-    
+        if (GameFlowManager.Instance != null)
+            GameFlowManager.Instance.ShowGameOver();
     }
 }

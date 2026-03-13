@@ -13,11 +13,7 @@ GameObject:
   - component: {fileID: 2594310222819058746}
   - component: {fileID: 3529509410277997533}
   - component: {fileID: -8485168477213524425}
-<<<<<<< HEAD
-  m_Layer: 10
-=======
-  m_Layer: 0
->>>>>>> origin/bugra
+  m_Layer: 6
   m_Name: SmallZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -153,17 +149,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-<<<<<<< HEAD
   damageToTurret: 1
   moveSpeed: 3
   dalgaGenligi: 0.2
   dalgaFrekansi: 2
   attackInterval: 1.2
-=======
-  moveSpeed: 3
-  dalgaGenligi: 0.2
-  dalgaFrekansi: 2
->>>>>>> origin/bugra
   Brain: {fileID: 1515463982421888334, guid: 3d10ce74ddc6d2540ba1c5af3a87574d, type: 3}
 --- !u!50 &-8485168477213524425
 Rigidbody2D:

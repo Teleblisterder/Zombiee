@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float lifeTime= 3f;
-    public float speed= 10f;
-<<<<<<< HEAD
-=======
+    public float lifeTime = 3f;
+    public float speed = 10f;
+
+    // Arkadaşının eklediği kısım: Taret ateş ederken bu değeri set edecek
     [HideInInspector] public float damage;
->>>>>>> origin/bugra
+
     void Start()
     {
         Destroy(gameObject, lifeTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right*speed*Time.deltaTime);
+        // Mermiyi sağa doğru (taretin baktığı yöne) ilerletir
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 }

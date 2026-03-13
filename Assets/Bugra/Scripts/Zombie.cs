@@ -1,18 +1,21 @@
-<<<<<<< HEAD
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
+    // Arkadaşının eklediği global liste (Yetenekler için zombileri takip eder)
+    public static List<Zombie> activeZombies = new List<Zombie>();
+
     [Header("Zombi Statları")]
     public float health = 4f;
     public int damageToTurret = 10; 
-    
 
     [Header("Hareket Ayarları")]
     public float moveSpeed = 2f;       
     public float dalgaGenligi = 0.5f;   
     public float dalgaFrekansi = 4f;    
+
     [Header("Saldırı Ayarları")]
     public float attackInterval = 1.2f; 
     private float nextAttackTime;
@@ -22,50 +25,34 @@ public class Zombie : MonoBehaviour
     public GameObject Brain;            
     private float startY;
     private SpriteRenderer sr;
-    
-    
 
-=======
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-
-public class Zombie : MonoBehaviour
-{
-    public static List<Zombie> activeZombies = new List<Zombie>();
-
-    [Header("Zombi Statları")]
-    public float health = 4f;
-
-    [Header("Hareket Ayarları")]
-    public float moveSpeed = 2f;
-    public float dalgaGenligi = 0.5f;
-    public float dalgaFrekansi = 4f;
-
-    public GameObject Brain;
-    private float startY;
-    private float originalSpeed; // Dondurma bitince eski hıza dönmek için
-    private float originaldalgaFrekansı;
-    private SpriteRenderer sr;
+    // Arkadaşının dondurma ve görsel sistemleri için gereken değişkenler
+    private float originalSpeed; 
+    private float originalDalgaFrekansi;
     private bool isFlashing = false;
 
     private void Awake()
     {
+        // Zombi doğduğunda listeye ekle
         activeZombies.Add(this);
     }
+
     private void OnDestroy()
     {
+        // Zombi yok olduğunda listeden çıkar
         activeZombies.Remove(this);
     }
->>>>>>> origin/bugra
+
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         startY = transform.position.y;
-<<<<<<< HEAD
+        
+        // Hızları yedekle (Freeze bittiğinde dönmek için)
+        originalSpeed = moveSpeed;
+        originalDalgaFrekansi = dalgaFrekansi;
 
-   
+        // Rastgele ses
         string[] groans = { "Groan1", "Groan2", "Groan3" };
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayRandom(groans, 0.3f);
@@ -75,13 +62,14 @@ public class Zombie : MonoBehaviour
     {
         if (health <= 0) return;
 
+        // SENİN SİSTEMİN: Eğer saldırıyorsa yürüme, yoksa yürü
         if (!isAttacking)
         {
             Move();
         }
         else
         {
-           
+            // Tarete ulaştıysa periyodik vur
             if (Time.time >= nextAttackTime)
             {
                 Attack();
@@ -89,84 +77,43 @@ public class Zombie : MonoBehaviour
             }
         }
     }
-    public void GetPushedBack(float pushAmount)
-    {
-        isAttacking = false; 
-        transform.position = new Vector3(transform.position.x + pushAmount, transform.position.y, transform.position.z);
-    
-       
-        startY = transform.position.y; 
-=======
-        originalSpeed = moveSpeed;
-        originaldalgaFrekansı = dalgaFrekansi;
-        string[] groans = { "Groan1", "Groan2", "Groan3" };
-        AudioManager.Instance.PlayRandom(groans, 0.3f);
-    }
-
-    private void Update()
-    {
-        Move();
->>>>>>> origin/bugra
-    }
 
     void Move()
     {
         float newX = transform.position.x - (moveSpeed * Time.deltaTime);
-<<<<<<< HEAD
         float newY = startY + Mathf.Sin(Time.time * dalgaFrekansi) * dalgaGenligi;
         transform.position = new Vector3(newX, newY, transform.position.z);
     }
 
     void Attack()
     {
-      
         BaseHealth baseHealth = FindObjectOfType<BaseHealth>();
         if (baseHealth != null)
         {
             baseHealth.TakeDamage(damageToTurret);
-           
         }
-=======
-
-        float newY = startY + Mathf.Sin(Time.time * dalgaFrekansi) * dalgaGenligi;
-
-        transform.position = new Vector3(newX, newY, transform.position.z);
->>>>>>> origin/bugra
     }
 
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
-<<<<<<< HEAD
-        StartCoroutine(HasarEfekti());
         
-        if (AudioManager.Instance != null)
-            AudioManager.Instance.Play("ZombieHit", 0.1f);
-
-=======
+        // Arkadaşının flashing kontrolü ile senin hasar efektin birleşti
         if (!isFlashing && sr != null)
         {
             StartCoroutine(HasarEfekti());
         }
-        AudioManager.Instance.Play("ZombieHit", 0.1f);
->>>>>>> origin/bugra
+        
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.Play("ZombieHit", 0.1f);
+
         if (health <= 0)
         {
             Die();
         }
     }
-<<<<<<< HEAD
 
-    void Die()
-    {
-     
-        if (Random.Range(0, 5) == 2)
-        {
-            Instantiate(Brain, transform.position, Quaternion.identity);
-        }
-
-       
-=======
+    // ARKADAŞININ SİSTEMİ: Dondurma Yeteneği
     public void ApplyFreeze(bool isFrozen)
     {
         if (sr == null) return;
@@ -179,67 +126,66 @@ public class Zombie : MonoBehaviour
         }
         else
         {
-            dalgaFrekansi = originaldalgaFrekansı;
+            dalgaFrekansi = originalDalgaFrekansi;
             moveSpeed = originalSpeed;
             sr.color = Color.white;
         }
     }
+
+    // SENİN SİSTEMİN: Geri İtme Yeteneği (Shockwave)
+    public void GetPushedBack(float pushAmount)
+    {
+        isAttacking = false; 
+        transform.position = new Vector3(transform.position.x + pushAmount, transform.position.y, transform.position.z);
+        startY = transform.position.y; 
+    }
+
     void Die()
     {
-        if(Random.Range(0,5)==2)
+        if (Random.Range(0, 5) == 2)
         {
-            Instantiate(Brain, transform.position,transform.rotation);
+            // İkinizin de instantiate yöntemini birleştirdik
+            Instantiate(Brain, transform.position, Quaternion.identity);
         }
->>>>>>> origin/bugra
+        
         WaveSpawner.enemiesAlive--;
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-<<<<<<< HEAD
-        
+        // Arkadaşının sistemini koruduk: Mermiden hasar değerini çekiyor
         if (collision.CompareTag("Bullet"))
         {
-            TakeDamage(1f); 
+            Bullet bulletScript = collision.GetComponent<Bullet>();
+            if(bulletScript != null)
+                TakeDamage(bulletScript.damage);
+            else
+                TakeDamage(1f); // Script yoksa varsayılan 1 vur
+                
             Destroy(collision.gameObject);
         }
 
-       
+        // Senin sistemini koruduk: Tarete çarpınca durup vurmaya başlar
         if (collision.CompareTag("Turret"))
         {
             isAttacking = true;
-           
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            if (rb != null) rb.linearVelocity = Vector2.zero;
+            // Unity 6+ versiyonlarında 'linearVelocity' kullanılır, hata verirse 'velocity' yapın.
+            if (rb != null) rb.linearVelocity = Vector2.zero; 
         }
     }
 
-    IEnumerator HasarEfekti()
-    {
-      
-        sr.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        sr.color = Color.white;
-=======
-        if (collision.CompareTag("Bullet"))
-        {
-            Bullet bulletScript=collision.GetComponent<Bullet>();
-            TakeDamage(bulletScript.damage);
-            Destroy(collision.gameObject);
-        }
-    }
     IEnumerator HasarEfekti()
     {
         isFlashing = true;
         for (int i = 0; i < 2; i++)
         {
-            sr.color = Color.red;    // K�rm�z� yap
+            sr.color = Color.red;
             yield return new WaitForSeconds(0.1f);
-            sr.color = Color.white; // Eskiye d�nd�r
+            sr.color = Color.white;
             yield return new WaitForSeconds(0.1f);
         }
-        isFlashing=false;
->>>>>>> origin/bugra
+        isFlashing = false;
     }
 }

@@ -6,26 +6,19 @@ TagManager:
   tags:
   - Bullet
   - Enemy
-<<<<<<< HEAD
   - Turret
-=======
->>>>>>> origin/bugra
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - BasePanel
+  - 
   - Water
   - UI
-  - Turret
-  - Text
-  - Panel
-  - 
-<<<<<<< HEAD
   - Enemy
-=======
+  - deneme
   - 
->>>>>>> origin/bugra
+  - 
+  - 
   - 
   - 
   - 
@@ -51,14 +44,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
-    uniqueID: 12445145
+  - name: UI
+    uniqueID: 3609211647
     locked: 0
-  - name: New Layer 2
-    uniqueID: 3670397955
-    locked: 0
-  - name: New Layer 3
-    uniqueID: 1925615269
+  - name: Layer2
+    uniqueID: 2805605267
     locked: 0
   m_RenderingLayers:
   - Default

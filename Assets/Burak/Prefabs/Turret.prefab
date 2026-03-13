@@ -132,10 +132,7 @@ GameObject:
   - component: {fileID: 419071482055952720}
   - component: {fileID: 3724094074559574077}
   - component: {fileID: 7722355012214452036}
-<<<<<<< HEAD
   - component: {fileID: 1325740451399053903}
-=======
->>>>>>> origin/bugra
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -228,11 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7184988330438242804, guid: f292d59a7f785a14caa4f20635c713eb, type: 3}
   firePoint: {fileID: 2852826406857169203}
-  fireRate: 0.1
   ts: {fileID: 4758435759838977848}
-  maxAmmo: 15
   currentAmmo: 0
-  reloadTime: 3
   ammoText: {fileID: 0}
   reloadSlider: {fileID: 0}
 --- !u!61 &3724094074559574077
@@ -294,7 +288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-<<<<<<< HEAD
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
 --- !u!114 &1325740451399053903
@@ -319,5 +312,3 @@ MonoBehaviour:
     m_Bits: 0
   skillSlider: {fileID: 0}
   tutorialText: {fileID: 0}
-=======
->>>>>>> origin/bugra

@@ -6,17 +6,17 @@ public class PowerUpManager : MonoBehaviour
 {
     public static PowerUpManager Instance;
 
-    // Hangi gücün seçili olduðunu tutacaðýmýz liste (Enum)
+    // Hangi gï¿½cï¿½n seï¿½ili olduï¿½unu tutacaï¿½ï¿½mï¿½z liste (Enum)
     public enum PowerUpType { None, Freeze, Fire, Grenade, InstaKill }
 
     [Header("Mevcut Durum")]
-    public PowerUpType selectedPowerUp = PowerUpType.None; // Baþlangýçta hiçbiri seçili deðil
+    public PowerUpType selectedPowerUp = PowerUpType.None; // Baï¿½langï¿½ï¿½ta hiï¿½biri seï¿½ili deï¿½il
 
-    [Header("Alev Ayarlarý")]
+    [Header("Alev Ayarlarï¿½")]
     public GameObject fireAreaPrefab;
     public Vector3 fireSpawnPosition;
 
-    [Header("Bomba Ayarlarý")]
+    [Header("Bomba Ayarlarï¿½")]
     public GameObject explosionEffect;
     public float grenadeRadius = 3f;
     public float grenadeDamage = 50f;
@@ -28,52 +28,51 @@ public class PowerUpManager : MonoBehaviour
 
     private void Update()
     {
-        // Eðer E tuþuna basýldýysa VE bir güç seçiliyse çalýþtýr
+        // 1. KONTROL: EÄŸer market paneli aÃ§Ä±ksa yetenek kullanÄ±lamaz!
+        if (UpgradeManager.Instance != null && UpgradeManager.Instance.upgradePanel.activeSelf)
+        {
+            return; 
+        }
+
+        // E tuÅŸuna basÄ±ldÄ±ysa ve bir gÃ¼Ã§ satÄ±n alÄ±ndÄ±ysa Ã§alÄ±ÅŸtÄ±r
         if (Input.GetKeyDown(KeyCode.E) && selectedPowerUp != PowerUpType.None)
         {
             ExecutePowerUp();
         }
-
-        // --- GEÇÝCÝ TEST TUÞLARI (UI baðlanana kadar denemek için) ---
-        // 1, 2, 3, 4 tuþlarý artýk gücü KULLANMIYOR, sadece SEÇÝYOR.
-        if (Input.GetKeyDown(KeyCode.Alpha1)) SelectFreeze();
-        if (Input.GetKeyDown(KeyCode.Alpha2)) SelectFire();
-        if (Input.GetKeyDown(KeyCode.Alpha3)) SelectGrenade();
-        if (Input.GetKeyDown(KeyCode.Alpha4)) SelectInstaKill();
     }
 
-    // --- UI BUTONLARININ ÇAÐIRACAÐI SEÇÝM FONKSÝYONLARI ---
+    // --- UI BUTONLARININ ï¿½Aï¿½IRACAï¿½I SEï¿½ï¿½M FONKSï¿½YONLARI ---
 
     public void SelectFreeze()
     {
         selectedPowerUp = PowerUpType.Freeze;
-        Debug.Log("Dondurma hazýr! Kullanmak için E'ye bas.");
+        Debug.Log("Dondurma hazï¿½r! Kullanmak iï¿½in E'ye bas.");
     }
 
     public void SelectFire()
     {
         selectedPowerUp = PowerUpType.Fire;
-        Debug.Log("Alev hazýr! Kullanmak için E'ye bas.");
+        Debug.Log("Alev hazï¿½r! Kullanmak iï¿½in E'ye bas.");
     }
 
     public void SelectGrenade()
     {
         selectedPowerUp = PowerUpType.Grenade;
-        Debug.Log("Bomba hazýr! Fare ile niþan al ve E'ye bas.");
+        Debug.Log("Bomba hazï¿½r! Fare ile niï¿½an al ve E'ye bas.");
     }
 
     public void SelectInstaKill()
     {
         selectedPowerUp = PowerUpType.InstaKill;
-        Debug.Log("Insta-Kill hazýr! Kullanmak için E'ye bas.");
+        Debug.Log("Insta-Kill hazï¿½r! Kullanmak iï¿½in E'ye bas.");
     }
 
 
-    // --- E TUÞUNA BASILINCA ÇALIÞACAK ANA MERKEZ ---
+    // --- E TUï¿½UNA BASILINCA ï¿½ALIï¿½ACAK ANA MERKEZ ---
 
     private void ExecutePowerUp()
     {
-        // Hangi güç seçiliyse onun fonksiyonunu çaðýr
+        // Hangi gï¿½ï¿½ seï¿½iliyse onun fonksiyonunu ï¿½aï¿½ï¿½r
         switch (selectedPowerUp)
         {
             case PowerUpType.Freeze:
@@ -85,7 +84,7 @@ public class PowerUpManager : MonoBehaviour
                 break;
 
             case PowerUpType.Grenade:
-                // Bomba seçiliyse, E'ye basýldýðý an farenin olduðu konuma atar
+                // Bomba seï¿½iliyse, E'ye basï¿½ldï¿½ï¿½ï¿½ an farenin olduï¿½u konuma atar
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 ThrowGrenade(mousePos);
                 break;
@@ -95,13 +94,13 @@ public class PowerUpManager : MonoBehaviour
                 break;
         }
 
-        // Güç kullanýldýktan sonra seçimi sýfýrla (Böylece oyuncu E'ye basýp durarak ayný gücü spamlayamaz)
+        // Gï¿½ï¿½ kullanï¿½ldï¿½ktan sonra seï¿½imi sï¿½fï¿½rla (Bï¿½ylece oyuncu E'ye basï¿½p durarak aynï¿½ gï¿½cï¿½ spamlayamaz)
         selectedPowerUp = PowerUpType.None;
-        Debug.Log("Güç kullanýldý! Yeni bir güç seçmelisin.");
+        Debug.Log("Gï¿½ï¿½ kullanï¿½ldï¿½! Yeni bir gï¿½ï¿½ seï¿½melisin.");
     }
 
 
-    // --- GÜÇLERÝN ARKA PLAN MEKANÝKLERÝ ---
+    // --- Gï¿½ï¿½LERï¿½N ARKA PLAN MEKANï¿½KLERï¿½ ---
 
     IEnumerator FreezeRoutine(float duration)
     {

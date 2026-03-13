@@ -13,11 +13,7 @@ GameObject:
   - component: {fileID: 2594310222819058746}
   - component: {fileID: 3529509410277997533}
   - component: {fileID: 7244651232888143113}
-<<<<<<< HEAD
-  m_Layer: 10
-=======
-  m_Layer: 0
->>>>>>> origin/bugra
+  m_Layer: 6
   m_Name: Zombi
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -82,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: -5767241295022145450, guid: e11d58fe21987ac4e8222e681da32f1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -152,19 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95aeb0cdf85a59046916cd290dc5ac2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   health: 5
   damageToTurret: 5
   moveSpeed: 1.5
   dalgaGenligi: 0.2
   dalgaFrekansi: 2
   attackInterval: 1.2
-=======
-  health: 4
-  moveSpeed: 1.5
-  dalgaGenligi: 0.2
-  dalgaFrekansi: 2
->>>>>>> origin/bugra
   Brain: {fileID: 1515463982421888334, guid: 3d10ce74ddc6d2540ba1c5af3a87574d, type: 3}
 --- !u!50 &7244651232888143113
 Rigidbody2D:
