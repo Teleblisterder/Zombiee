@@ -2,27 +2,27 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.EventSystems; // UI tespiti için gerekli (Senin sistemin)
+using UnityEngine.EventSystems; 
 
 public class Turret : MonoBehaviour
 {
     [Header("Silah Ayarları")]
-    public WeaponData currentWeapon; // Editörden içine silah dosyasını sürükleyeceğimiz yuva (Arkadaşının sistemi)
+    public WeaponData currentWeapon; 
     public Transform firePoint;
-    public GameObject ts; // Taret kafası
+    public GameObject ts; 
 
     [Header("UI Referansları")]
     public TextMeshProUGUI ammoText;
     public Slider reloadSlider;
 
-    // Çalışma değişkenleri
+    
     public int currentAmmo;
     private bool isReloading = false;
     private float nextFireTime = 0f;
 
     private void Start()
     {
-        // Arkadaşının sistemi: Oyun başlarken seçili silahın orijinalini bozmamak için klonunu oluştur
+        
         if (currentWeapon != null)
         {
             currentWeapon = Instantiate(currentWeapon);
@@ -35,25 +35,25 @@ public class Turret : MonoBehaviour
 
     private void Update()
     {
-        // SENİN SİSTEMİN: Fare UI üzerindeyse (Geliştirme butonu vb.) taret hiçbir şey yapmaz
+       
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
 
-        // Oyun durmuşsa veya reload yapılıyorsa taret işlem yapmaz
+       
         if (Time.timeScale == 0 || isReloading) return;
 
         RotateTowardsMouse();
 
-        // Şarjör bittiyse veya R'ye basıldıysa Reload başlat (currentWeapon verilerini kullanır)
+       
         if (currentAmmo <= 0 || (Input.GetKeyDown(KeyCode.R) && currentAmmo < currentWeapon.maxAmmo))
         {
             StartCoroutine(Reload());
             return;
         }
 
-        // ARKADAŞININ SİSTEMİ: Silah türüne göre Input belirle (Taramalı mı yarı otomatik mi?)
+       
         bool isShooting = currentWeapon.isAutomatic ? Input.GetMouseButton(0) : Input.GetMouseButtonDown(0);
 
         if (isShooting && Time.time >= nextFireTime)
@@ -63,7 +63,7 @@ public class Turret : MonoBehaviour
                 Shoot();
                 nextFireTime = Time.time + currentWeapon.fireRate;
             }
-            else if (Input.GetMouseButtonDown(0)) // SENİN SİSTEMİN: Mermi yoksa tık tık sesi
+            else if (Input.GetMouseButtonDown(0)) 
             {
                 AudioManager.Instance.Play("EmptyClick", 0.2f);
             }
@@ -93,7 +93,7 @@ public class Turret : MonoBehaviour
         AudioManager.Instance.Play("ReloadStart");
 
         reloadSlider.gameObject.SetActive(true);
-        reloadSlider.maxValue = currentWeapon.reloadTime; // Süreyi silahtan çek
+        reloadSlider.maxValue = currentWeapon.reloadTime; 
         reloadSlider.value = 0;
 
         float timer = 0;
@@ -106,7 +106,7 @@ public class Turret : MonoBehaviour
 
         AudioManager.Instance.Play("ReloadEnd");
 
-        currentAmmo = currentWeapon.maxAmmo; // Mermiyi silahtan çek
+        currentAmmo = currentWeapon.maxAmmo; 
         isReloading = false;
         reloadSlider.gameObject.SetActive(false);
         UpdateUI();
@@ -114,7 +114,7 @@ public class Turret : MonoBehaviour
 
     public void UpdateUI()
     {
-        // Senin düzeltmen: display mermiyi eksiye düşürmez
+       
         int displayAmmo = Mathf.Max(0, currentAmmo);
         if (currentWeapon != null)
             ammoText.text = displayAmmo + " / " + currentWeapon.maxAmmo;

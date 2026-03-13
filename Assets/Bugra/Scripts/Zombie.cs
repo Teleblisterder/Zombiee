@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    // Arkadaşının eklediği global liste (Yetenekler için zombileri takip eder)
+  
     public static List<Zombie> activeZombies = new List<Zombie>();
 
     [Header("Zombi Statları")]
@@ -26,20 +26,20 @@ public class Zombie : MonoBehaviour
     private float startY;
     private SpriteRenderer sr;
 
-    // Arkadaşının dondurma ve görsel sistemleri için gereken değişkenler
+  
     private float originalSpeed; 
     private float originalDalgaFrekansi;
     private bool isFlashing = false;
 
     private void Awake()
     {
-        // Zombi doğduğunda listeye ekle
+       
         activeZombies.Add(this);
     }
 
     private void OnDestroy()
     {
-        // Zombi yok olduğunda listeden çıkar
+       
         activeZombies.Remove(this);
     }
 
@@ -48,11 +48,11 @@ public class Zombie : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         startY = transform.position.y;
         
-        // Hızları yedekle (Freeze bittiğinde dönmek için)
+       
         originalSpeed = moveSpeed;
         originalDalgaFrekansi = dalgaFrekansi;
 
-        // Rastgele ses
+     
         string[] groans = { "Groan1", "Groan2", "Groan3" };
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayRandom(groans, 0.3f);
@@ -62,14 +62,14 @@ public class Zombie : MonoBehaviour
     {
         if (health <= 0) return;
 
-        // SENİN SİSTEMİN: Eğer saldırıyorsa yürüme, yoksa yürü
+     
         if (!isAttacking)
         {
             Move();
         }
         else
         {
-            // Tarete ulaştıysa periyodik vur
+           
             if (Time.time >= nextAttackTime)
             {
                 Attack();
@@ -98,7 +98,7 @@ public class Zombie : MonoBehaviour
     {
         health -= damageAmount;
         
-        // Arkadaşının flashing kontrolü ile senin hasar efektin birleşti
+       
         if (!isFlashing && sr != null)
         {
             StartCoroutine(HasarEfekti());
@@ -113,7 +113,7 @@ public class Zombie : MonoBehaviour
         }
     }
 
-    // ARKADAŞININ SİSTEMİ: Dondurma Yeteneği
+   
     public void ApplyFreeze(bool isFrozen)
     {
         if (sr == null) return;
@@ -132,7 +132,7 @@ public class Zombie : MonoBehaviour
         }
     }
 
-    // SENİN SİSTEMİN: Geri İtme Yeteneği (Shockwave)
+    
     public void GetPushedBack(float pushAmount)
     {
         isAttacking = false; 
@@ -144,7 +144,7 @@ public class Zombie : MonoBehaviour
     {
         if (Random.Range(0, 5) == 2)
         {
-            // İkinizin de instantiate yöntemini birleştirdik
+          
             Instantiate(Brain, transform.position, Quaternion.identity);
         }
         
@@ -154,24 +154,24 @@ public class Zombie : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Arkadaşının sistemini koruduk: Mermiden hasar değerini çekiyor
+       
         if (collision.CompareTag("Bullet"))
         {
             Bullet bulletScript = collision.GetComponent<Bullet>();
             if(bulletScript != null)
                 TakeDamage(bulletScript.damage);
             else
-                TakeDamage(1f); // Script yoksa varsayılan 1 vur
+                TakeDamage(1f);
                 
             Destroy(collision.gameObject);
         }
 
-        // Senin sistemini koruduk: Tarete çarpınca durup vurmaya başlar
+       
         if (collision.CompareTag("Turret"))
         {
             isAttacking = true;
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            // Unity 6+ versiyonlarında 'linearVelocity' kullanılır, hata verirse 'velocity' yapın.
+           
             if (rb != null) rb.linearVelocity = Vector2.zero; 
         }
     }

@@ -6,12 +6,11 @@ public class PowerUpManager : MonoBehaviour
 {
     public static PowerUpManager Instance;
 
-    // Hangi g�c�n se�ili oldu�unu tutaca��m�z liste (Enum)
+  
     public enum PowerUpType { None, Freeze, Fire, Grenade, InstaKill }
 
     [Header("Mevcut Durum")]
-    public PowerUpType selectedPowerUp = PowerUpType.None; // Ba�lang��ta hi�biri se�ili de�il
-
+    public PowerUpType selectedPowerUp = PowerUpType.None; 
     [Header("Alev Ayarlar�")]
     public GameObject fireAreaPrefab;
     public Vector3 fireSpawnPosition;
@@ -28,20 +27,20 @@ public class PowerUpManager : MonoBehaviour
 
     private void Update()
     {
-        // 1. KONTROL: Eğer market paneli açıksa yetenek kullanılamaz!
+       
         if (UpgradeManager.Instance != null && UpgradeManager.Instance.upgradePanel.activeSelf)
         {
             return; 
         }
 
-        // E tuşuna basıldıysa ve bir güç satın alındıysa çalıştır
+       
         if (Input.GetKeyDown(KeyCode.E) && selectedPowerUp != PowerUpType.None)
         {
             ExecutePowerUp();
         }
     }
 
-    // --- UI BUTONLARININ �A�IRACA�I SE��M FONKS�YONLARI ---
+   
 
     public void SelectFreeze()
     {
@@ -68,11 +67,11 @@ public class PowerUpManager : MonoBehaviour
     }
 
 
-    // --- E TU�UNA BASILINCA �ALI�ACAK ANA MERKEZ ---
+   
 
     private void ExecutePowerUp()
     {
-        // Hangi g�� se�iliyse onun fonksiyonunu �a��r
+        
         switch (selectedPowerUp)
         {
             case PowerUpType.Freeze:
@@ -84,7 +83,7 @@ public class PowerUpManager : MonoBehaviour
                 break;
 
             case PowerUpType.Grenade:
-                // Bomba se�iliyse, E'ye bas�ld��� an farenin oldu�u konuma atar
+              
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 ThrowGrenade(mousePos);
                 break;
@@ -94,13 +93,13 @@ public class PowerUpManager : MonoBehaviour
                 break;
         }
 
-        // G�� kullan�ld�ktan sonra se�imi s�f�rla (B�ylece oyuncu E'ye bas�p durarak ayn� g�c� spamlayamaz)
+        
         selectedPowerUp = PowerUpType.None;
         Debug.Log("G�� kullan�ld�! Yeni bir g�� se�melisin.");
     }
 
 
-    // --- G��LER�N ARKA PLAN MEKAN�KLER� ---
+   
 
     IEnumerator FreezeRoutine(float duration)
     {

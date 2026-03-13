@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// --- 1. DALGA VERİ YAPISI (Bu kısım eksik olduğu için hata alıyordun) ---
+
 [System.Serializable]
 public class Wave
 {
@@ -15,7 +15,7 @@ public class Wave
     public float spawnRate; 
 }
 
-// --- 2. ANA SPAWNER SINIFI ---
+
 public class WaveSpawner : MonoBehaviour
 {
     [Header("Zombi Prefabları")]
@@ -49,31 +49,31 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
-        // Restart/Başlangıç temizliği
+       
         enemiesAlive = 0;
         spawnedZombiesCount = 0;
         targetProgress = 0f;
         isVictoryTriggered = false;
         currentWaveIndex = 0;
 
-        // 1. Toplam zombiyi hesapla
+       
         totalZombiesInLevel = 0;
         foreach (Wave w in waves)
         {
             totalZombiesInLevel += w.normalZombieCount + w.fastZombieCount + w.tankZombieCount;
         }
 
-        // 2. UI ZORLA SIFIRLA VE AÇ
+      
         if (waveProgressBar != null)
         {
             waveProgressBar.minValue = 0f;
             waveProgressBar.maxValue = 1f; 
-            waveProgressBar.value = 0f; // Slider'ın 1'den başlamasını engeller
+            waveProgressBar.value = 0f; 
         }
 
         if (waveText != null) 
         {
-            waveText.gameObject.SetActive(true); // Kapanma sorununu çözer
+            waveText.gameObject.SetActive(true); 
             waveText.text = "Bölüm: 1 / " + waves.Length;
         }
 
@@ -82,13 +82,13 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-        // 3. BARIN AKICI DOLMASI (Mathf.Lerp ile pürüzsüzleştirildi)
+       
         if (waveProgressBar != null)
         {
             waveProgressBar.value = Mathf.Lerp(waveProgressBar.value, targetProgress, Time.deltaTime * barSmoothSpeed);
         }
 
-        // ZAFER KONTROLÜ
+       
         if (!isSpawning && enemiesAlive <= 0 && currentWaveIndex >= waves.Length)
         {
             if (!isVictoryTriggered)
@@ -99,7 +99,7 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        // YENİ DALGA KONTROLÜ
+      
         if (!isSpawning && enemiesAlive <= 0 && currentWaveIndex < waves.Length)
         {
             StartCoroutine(StartNextWave());
@@ -127,7 +127,7 @@ public class WaveSpawner : MonoBehaviour
         {
             SpawnZombie(zombie);
             
-            // PROGRESS GÜNCELLEME
+            
             spawnedZombiesCount++;
             if(totalZombiesInLevel > 0)
                 targetProgress = (float)spawnedZombiesCount / totalZombiesInLevel;

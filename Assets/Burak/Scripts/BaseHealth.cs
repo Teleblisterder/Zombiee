@@ -18,7 +18,7 @@ public class BaseHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         
-        // UI Baþlangýç Ayarlarý
+     
         if (healthSlider != null)
         {
             healthSlider.maxValue = maxHealth;
@@ -29,7 +29,7 @@ public class BaseHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Debug.Log("Temas: " + collision.gameObject.name);
+      
 
         if (collision.CompareTag("Enemy") && !isGameOver)
         {
@@ -44,11 +44,11 @@ public class BaseHealth : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth <= 0) currentHealth = 0;
 
-        // SES: Hasar alma sesi
+       
         if (AudioManager.Instance != null)
             AudioManager.Instance.Play("TurretDamage", 0.15f);
        
-        // SENİN SİSTEMİN: İlk hasarda Slow-Mo Tutorial'ı başlatır
+        
         if (AbilityManager.Instance != null)
         {
             AbilityManager.Instance.StartTutorial();
@@ -73,7 +73,7 @@ public class BaseHealth : MonoBehaviour
         if (isGameOver) return;
         isGameOver = true;
         
-        // GameFlowManager'daki fonksiyonu çağırıyoruz
+      
         if (GameFlowManager.Instance != null)
             GameFlowManager.Instance.ShowGameOver();
     }

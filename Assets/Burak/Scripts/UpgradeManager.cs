@@ -34,12 +34,12 @@ public class UpgradeManager : MonoBehaviour
 
     void Start()
     {
-        // Temel Geliþtirmeler
+      
         fireRateBtn.onClick.AddListener(UpgradeFireRate);
         maxAmmoBtn.onClick.AddListener(UpgradeMaxAmmo);
         reloadSpeedBtn.onClick.AddListener(UpgradeReloadSpeed);
         
-        // Yetenek Satýn Alýmý (Burada PowerUpManager'daki Select fonksiyonlarýný çaðýrýyoruz)
+       
         buyFreezeBtn.onClick.AddListener(() => BuyPowerUp("Freeze", freezeCost));
         buyFireBtn.onClick.AddListener(() => BuyPowerUp("Fire", fireBombCost));
         buyGrenadeBtn.onClick.AddListener(() => BuyPowerUp("Grenade", grenadeCost));
@@ -56,7 +56,7 @@ public class UpgradeManager : MonoBehaviour
         {
             CurrencyManager.Instance.totalScrap -= cost;
             
-            // Satın alınan gücü PowerUpManager'a bildir
+          
             switch (type)
             {
                 case "Freeze": PowerUpManager.Instance.SelectFreeze(); break;
@@ -91,7 +91,7 @@ public class UpgradeManager : MonoBehaviour
         maxAmmoBtn.interactable = currentScrap >= ammoCost;
         reloadSpeedBtn.interactable = currentScrap >= reloadCost;
 
-        // Yetenek butonları kontrolü
+       
         buyFreezeBtn.interactable = currentScrap >= freezeCost;
         buyFireBtn.interactable = currentScrap >= fireBombCost;
         buyGrenadeBtn.interactable = currentScrap >= grenadeCost;
