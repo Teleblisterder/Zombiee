@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+<<<<<<< HEAD
   - Turret
+=======
+>>>>>>> origin/bugra
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,11 @@ TagManager:
   - Text
   - Panel
   - 
+<<<<<<< HEAD
   - Enemy
+=======
+  - 
+>>>>>>> origin/bugra
   - 
   - 
   - 

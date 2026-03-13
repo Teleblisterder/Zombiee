@@ -38,7 +38,11 @@ public class BaseHealth : MonoBehaviour
         
            
             WaveSpawner.enemiesAlive--;
+<<<<<<< HEAD
           
+=======
+            Destroy(collision.gameObject);
+>>>>>>> origin/bugra
         }
     }
 
@@ -47,11 +51,15 @@ public class BaseHealth : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth <= 0) currentHealth = 0;
         AudioManager.Instance.Play("TurretDamage", 0.15f);
+<<<<<<< HEAD
        
         if (AbilityManager.Instance != null)
         {
             AbilityManager.Instance.StartTutorial();
         }
+=======
+
+>>>>>>> origin/bugra
         UpdateUI();
 
         if (currentHealth <= 0)

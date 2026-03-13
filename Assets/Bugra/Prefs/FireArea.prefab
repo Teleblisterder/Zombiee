@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5539211793060980015
+--- !u!1 &3052345830712544436
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7549509812965801160}
-  - component: {fileID: 3680283981557023000}
-  - component: {fileID: 2594310222819058746}
-  - component: {fileID: 3529509410277997533}
-  - component: {fileID: -8485168477213524425}
-<<<<<<< HEAD
-  m_Layer: 10
-=======
+  - component: {fileID: 8561226223292374107}
+  - component: {fileID: 4894744120226421437}
+  - component: {fileID: 175023543427342830}
+  - component: {fileID: -3560811779338467527}
   m_Layer: 0
->>>>>>> origin/bugra
-  m_Name: SmallZombie
-  m_TagString: Enemy
+  m_Name: FireArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7549509812965801160
+--- !u!4 &8561226223292374107
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5539211793060980015}
+  m_GameObject: {fileID: 3052345830712544436}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.21, y: -3.4912, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0.77, y: -6.3, z: 0}
+  m_LocalScale: {x: 27.427324, y: 1.2930176, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3680283981557023000
+--- !u!212 &4894744120226421437
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5539211793060980015}
+  m_GameObject: {fileID: 3052345830712544436}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5767241295022145450, guid: e11d58fe21987ac4e8222e681da32f1a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 0.38590723, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,13 +89,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2594310222819058746
+--- !u!61 &175023543427342830
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5539211793060980015}
+  m_GameObject: {fileID: 3052345830712544436}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -128,67 +123,29 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.15580407, y: -0.038951397}
+  m_Offset: {x: 0, y: 1.2843642}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.17, y: 3.82}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.99999744, y: 3.7889204}
+  m_Size: {x: 1, y: 3.568728}
   m_EdgeRadius: 0
---- !u!114 &3529509410277997533
+--- !u!114 &-3560811779338467527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5539211793060980015}
+  m_GameObject: {fileID: 3052345830712544436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95aeb0cdf85a59046916cd290dc5ac2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ff72d435809ca0468397789514a584f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
-<<<<<<< HEAD
-  damageToTurret: 1
-  moveSpeed: 3
-  dalgaGenligi: 0.2
-  dalgaFrekansi: 2
-  attackInterval: 1.2
-=======
-  moveSpeed: 3
-  dalgaGenligi: 0.2
-  dalgaFrekansi: 2
->>>>>>> origin/bugra
-  Brain: {fileID: 1515463982421888334, guid: 3d10ce74ddc6d2540ba1c5af3a87574d, type: 3}
---- !u!50 &-8485168477213524425
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5539211793060980015}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  lifetime: 7
+  damagePerSecond: 0.2
