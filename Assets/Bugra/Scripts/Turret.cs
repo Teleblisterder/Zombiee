@@ -5,92 +5,86 @@ using System.Collections;
 
 public class Turret : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    [Header("Silah Ayarları")]
+    public WeaponData currentWeapon; // Editörden içine silah dosyasını sürükleyeceğimiz yuva
     public Transform firePoint;
-    public float fireRate = 0.8f; 
-    public GameObject ts; 
+    public GameObject ts;
 
-    [Header("Şarjör ve Reload Sistemi")]
-    public int maxAmmo = 15;        
-    public int currentAmmo;         
-    public float reloadTime = 4f;  
+
+    public int currentAmmo;
     private bool isReloading = false;
+    private float nextFireTime = 0f;
 
     [Header("UI Referansları")]
-    public TextMeshProUGUI ammoText; 
-    public Slider reloadSlider;    
-    private float nextFireTime = 0f;
+    public TextMeshProUGUI ammoText;
+    public Slider reloadSlider;
 
     private void Start()
     {
-        currentAmmo = maxAmmo;
+        // Oyun başlarken seçili silahın mermisini doldur
+        currentWeapon = Instantiate(currentWeapon);
+        currentAmmo = currentWeapon.maxAmmo;
         UpdateUI();
         reloadSlider.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (Time.timeScale == 0) return; 
+        if (Time.timeScale == 0) return;
         if (isReloading) return;
 
         RotateTowardsMouse();
 
-       
-        if (currentAmmo <= 0 || (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo))
+        // Şarjör bittiyse veya R'ye basıldıysa
+        if (currentAmmo <= 0 || (Input.GetKeyDown(KeyCode.R) && currentAmmo < currentWeapon.maxAmmo))
         {
             StartCoroutine(Reload());
             return;
         }
 
-        
-        if (Input.GetMouseButton(0) && Time.time >= nextFireTime && currentAmmo > 0)
+        // SİLAH TÜRÜNE GÖRE INPUT KONTROLÜ
+        // isAutomatic true ise basılı tutmayı (GetMouseButton), false ise tek tıklamayı (GetMouseButtonDown) dinle
+        bool isShooting = currentWeapon.isAutomatic ? Input.GetMouseButton(0) : Input.GetMouseButtonDown(0);
+
+        if (isShooting && Time.time >= nextFireTime && currentAmmo > 0)
         {
             Shoot();
-            nextFireTime = Time.time + fireRate;
+            nextFireTime = Time.time + currentWeapon.fireRate;
         }
     }
 
     void Shoot()
     {
-        if (currentAmmo > 0)
-        {
-            currentAmmo--; 
-            UpdateUI(); 
-          
-            AudioManager.Instance.Play("Shoot", 0.07f); 
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        }
-        else
-        {
-         
-            AudioManager.Instance.Play("EmptyClick", 0.2f);
-            currentAmmo = 0; 
-            UpdateUI();
-        }
+        currentAmmo--;
+        UpdateUI();
+
+        // Sesi ve mermiyi silah dosyasından çekiyoruz
+        AudioManager.Instance.Play(currentWeapon.shootSoundName, 0.07f);
+        GameObject firedBullet = Instantiate(currentWeapon.bulletPrefab, firePoint.position, firePoint.rotation);
+        firedBullet.GetComponent<Bullet>().damage = currentWeapon.damage;
     }
 
     IEnumerator Reload()
     {
         isReloading = true;
-
         AudioManager.Instance.Play("ReloadStart");
-    
+
         reloadSlider.gameObject.SetActive(true);
-        reloadSlider.maxValue = reloadTime;
+        reloadSlider.maxValue = currentWeapon.reloadTime; // Süreyi silahtan çek
         reloadSlider.value = 0;
 
         float timer = 0;
 
-        while (timer < reloadTime)
+        while (timer < currentWeapon.reloadTime)
         {
             timer += Time.deltaTime;
-            reloadSlider.value = timer; 
-            yield return null; 
+            reloadSlider.value = timer;
+            yield return null;
         }
 
         AudioManager.Instance.Play("ReloadEnd");
-    
-        currentAmmo = maxAmmo;
+
+        currentAmmo = currentWeapon.maxAmmo; // Mermiyi silahtan çek
         isReloading = false;
         reloadSlider.gameObject.SetActive(false);
         UpdateUI();
@@ -98,9 +92,8 @@ public class Turret : MonoBehaviour
 
     public void UpdateUI()
     {
-        
         int displayAmmo = Mathf.Max(0, currentAmmo);
-        ammoText.text = displayAmmo + " / " + maxAmmo;
+        ammoText.text = displayAmmo + " / " + currentWeapon.maxAmmo;
     }
 
     void RotateTowardsMouse()

@@ -1,25 +1,41 @@
-using UnityEngine;
-using UnityEditor;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    [Header("Zombi Statlar�")]
+    public static List<Zombie> activeZombies = new List<Zombie>();
+
+    [Header("Zombi Statları")]
     public float health = 4f;
 
-    [Header("Hareket Ayarlar�")]
-    public float moveSpeed = 2f;        // Sola gitme h�z�
-    public float dalgaGenligi = 0.5f;  // Ne kadar yukar�/a�a�� sapaca�� (Y�kseklik)
-    public float dalgaFrekansi = 4f;    // Dalgalanma h�z� (Ne kadar h�zl� sallanaca��)
+    [Header("Hareket Ayarları")]
+    public float moveSpeed = 2f;
+    public float dalgaGenligi = 0.5f;
+    public float dalgaFrekansi = 4f;
 
     public GameObject Brain;
-    private float startY; // Zombinin do�du�u orijinal Y pozisyonu
+    private float startY;
+    private float originalSpeed; // Dondurma bitince eski hıza dönmek için
+    private float originaldalgaFrekansı;
     private SpriteRenderer sr;
+    private bool isFlashing = false;
 
+    private void Awake()
+    {
+        activeZombies.Add(this);
+    }
+    private void OnDestroy()
+    {
+        activeZombies.Remove(this);
+    }
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         startY = transform.position.y;
+        originalSpeed = moveSpeed;
+        originaldalgaFrekansı = dalgaFrekansi;
         string[] groans = { "Groan1", "Groan2", "Groan3" };
         AudioManager.Instance.PlayRandom(groans, 0.3f);
     }
@@ -41,14 +57,33 @@ public class Zombie : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
-        StartCoroutine(HasarEfekti());
+        if (!isFlashing && sr != null)
+        {
+            StartCoroutine(HasarEfekti());
+        }
         AudioManager.Instance.Play("ZombieHit", 0.1f);
         if (health <= 0)
         {
             Die();
         }
     }
+    public void ApplyFreeze(bool isFrozen)
+    {
+        if (sr == null) return;
 
+        if (isFrozen)
+        {
+            moveSpeed = 0f;
+            sr.color = Color.blue;
+            dalgaFrekansi = 0;
+        }
+        else
+        {
+            dalgaFrekansi = originaldalgaFrekansı;
+            moveSpeed = originalSpeed;
+            sr.color = Color.white;
+        }
+    }
     void Die()
     {
         if(Random.Range(0,5)==2)
@@ -63,12 +98,14 @@ public class Zombie : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
-            TakeDamage(1f);
+            Bullet bulletScript=collision.GetComponent<Bullet>();
+            TakeDamage(bulletScript.damage);
             Destroy(collision.gameObject);
         }
     }
     IEnumerator HasarEfekti()
     {
+        isFlashing = true;
         for (int i = 0; i < 2; i++)
         {
             sr.color = Color.red;    // K�rm�z� yap
@@ -76,5 +113,6 @@ public class Zombie : MonoBehaviour
             sr.color = Color.white; // Eskiye d�nd�r
             yield return new WaitForSeconds(0.1f);
         }
+        isFlashing=false;
     }
 }

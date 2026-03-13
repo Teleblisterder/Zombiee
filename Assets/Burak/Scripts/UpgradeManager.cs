@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class UpgradeManager : MonoBehaviour
 {
     [Header("Referanslar")]
-    public Turret turret; 
+    public Turret turret;
     public GameObject upgradePanel;
-    public Button openCloseBtn; 
+    public Button openCloseBtn;
 
-    [Header("Upgrade Butonlarý")]
+    [Header("Upgrade Butonları")]
     public Button fireRateBtn;
     public Button maxAmmoBtn;
     public Button reloadSpeedBtn;
@@ -21,15 +21,13 @@ public class UpgradeManager : MonoBehaviour
 
     void Start()
     {
-        
         fireRateBtn.onClick.AddListener(UpgradeFireRate);
         maxAmmoBtn.onClick.AddListener(UpgradeMaxAmmo);
         reloadSpeedBtn.onClick.AddListener(UpgradeReloadSpeed);
-        
-      
+
         openCloseBtn.onClick.AddListener(ToggleUpgradeMenu);
 
-        upgradePanel.SetActive(false); 
+        upgradePanel.SetActive(false);
         UpdateBtnTexts();
     }
 
@@ -41,17 +39,13 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-   
     public void ToggleUpgradeMenu()
     {
-        
         bool isActive = !upgradePanel.activeSelf;
         upgradePanel.SetActive(isActive);
 
-       
         Time.timeScale = isActive ? 0f : 1f;
 
-       
         openCloseBtn.GetComponentInChildren<TextMeshProUGUI>().text = isActive ? "Devam Et" : "Geliştirme";
     }
 
@@ -70,13 +64,18 @@ public class UpgradeManager : MonoBehaviour
         reloadSpeedBtn.GetComponentInChildren<TextMeshProUGUI>().text = reloadCost.ToString();
     }
 
-    
     void UpgradeFireRate()
     {
-        CurrencyManager.Instance.totalScrap -= fireRateCost;
-        turret.fireRate -= 0.05f; 
-        fireRateCost = Mathf.RoundToInt(fireRateCost * 1.5f);
-        FinishTransaction();
+        if (CurrencyManager.Instance.totalScrap >= fireRateCost)
+        {
+            CurrencyManager.Instance.totalScrap -= fireRateCost;
+
+            // turret.fireRate yerine turret.currentWeapon.fireRate kullanıyoruz
+            turret.currentWeapon.fireRate -= 0.05f;
+
+            fireRateCost = Mathf.RoundToInt(fireRateCost * 1.5f);
+            FinishTransaction();
+        }
     }
 
     void UpgradeMaxAmmo()
@@ -84,10 +83,13 @@ public class UpgradeManager : MonoBehaviour
         if (CurrencyManager.Instance.totalScrap >= ammoCost)
         {
             CurrencyManager.Instance.totalScrap -= ammoCost;
-            turret.maxAmmo += 15;
-            turret.currentAmmo = turret.maxAmmo; 
+
+            // turret.maxAmmo yerine turret.currentWeapon.maxAmmo kullanıyoruz
+            turret.currentWeapon.maxAmmo += 15;
+            turret.currentAmmo = turret.currentWeapon.maxAmmo;
+
             ammoCost = Mathf.RoundToInt(ammoCost * 1.4f);
-            turret.UpdateUI(); 
+            turret.UpdateUI();
             FinishTransaction();
         }
     }
@@ -97,8 +99,11 @@ public class UpgradeManager : MonoBehaviour
         if (CurrencyManager.Instance.totalScrap >= reloadCost)
         {
             CurrencyManager.Instance.totalScrap -= reloadCost;
-            turret.reloadTime -= 0.5f; // Reload süresini kısalt
-            if (turret.reloadTime < 0.5f) turret.reloadTime = 0.5f;
+
+            // turret.reloadTime yerine turret.currentWeapon.reloadTime kullanıyoruz
+            turret.currentWeapon.reloadTime -= 0.5f;
+            if (turret.currentWeapon.reloadTime < 0.5f) turret.currentWeapon.reloadTime = 0.5f;
+
             reloadCost = Mathf.RoundToInt(reloadCost * 1.6f);
             FinishTransaction();
         }
@@ -107,6 +112,6 @@ public class UpgradeManager : MonoBehaviour
     void FinishTransaction()
     {
         UpdateBtnTexts();
-        CurrencyManager.Instance.AddScrap(0);
+        CurrencyManager.Instance.AddScrap(0); // Bu fonksiyon UI'ı tetiklemek için harika düşünülmüş
     }
 }
