@@ -81,7 +81,7 @@ public class UpgradeManager : MonoBehaviour
     {
         bool isActive = !upgradePanel.activeSelf;
         upgradePanel.SetActive(isActive);
-        openCloseBtn.GetComponentInChildren<TextMeshProUGUI>().text = isActive ? "Kapat" : "Geliþtirme";
+        openCloseBtn.GetComponentInChildren<TextMeshProUGUI>().text = isActive ? "Kapat" : "Geliştirme";
     }
 
     void CheckButtonInteractable()
