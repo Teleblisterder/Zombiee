@@ -148,14 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22459403d765264fbaa01ac26bc2235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalZombie: {fileID: 5539211793060980015, guid: fb698fc469e1fc642b30b221c5ec819d, type: 3}
-  fastZombie: {fileID: 5539211793060980015, guid: 19eb60e6948a0b4449881d3694b69cfd, type: 3}
-  tankZombie: {fileID: 5539211793060980015, guid: 80b85329f131baa4e903874beac6971a, type: 3}
+  normalZombie: {fileID: 5539211793060980015, guid: dba970cd433ebc44aa8571582bf75e44, type: 3}
+  fastZombie: {fileID: 5539211793060980015, guid: 1e5ebe107f16761408923febb041823d, type: 3}
+  tankZombie: {fileID: 5539211793060980015, guid: 5184ec198b24dcc43be705bab21b2484, type: 3}
   waves:
   - waveName: First
     normalZombieCount: 10
     fastZombieCount: 0
-    tankZombieCount: 0
+    tankZombieCount: 3
     spawnRate: 1
   - waveName: Second
     normalZombieCount: 15
