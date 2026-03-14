@@ -126,7 +126,7 @@ public class UpgradeManager : MonoBehaviour
         if (CurrencyManager.Instance.totalScrap >= ammoCost)
         {
             CurrencyManager.Instance.totalScrap -= ammoCost;
-            turret.currentWeapon.maxAmmo += 15;
+            turret.currentWeapon.maxAmmo += 5;
             turret.currentAmmo = turret.currentWeapon.maxAmmo;
             ammoCost = Mathf.RoundToInt(ammoCost * 1.4f);
             turret.UpdateUI(); 

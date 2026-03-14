@@ -15,45 +15,48 @@ public class Turret : MonoBehaviour
     public TextMeshProUGUI ammoText;
     public Slider reloadSlider;
 
-    
     public int currentAmmo;
     private bool isReloading = false;
     private float nextFireTime = 0f;
+    
+    [Header("Evrim Ayarları")]
+    public WeaponData automaticWeaponData; 
 
     private void Start()
     {
-        
         if (currentWeapon != null)
         {
             currentWeapon = Instantiate(currentWeapon);
             currentAmmo = currentWeapon.maxAmmo;
         }
-        
         UpdateUI();
         reloadSlider.gameObject.SetActive(false);
     }
 
+    public void EvolveToAutomatic()
+    {
+        if (automaticWeaponData != null)
+        {
+            currentWeapon = Instantiate(automaticWeaponData);
+            currentAmmo = currentWeapon.maxAmmo;
+            UpdateUI();
+            Debug.Log("<color=green>SİLAH TARAMALIYA GEÇTİ!</color>");
+        }
+    }
+
     private void Update()
     {
-       
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-
-       
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
         if (Time.timeScale == 0 || isReloading) return;
 
         RotateTowardsMouse();
 
-       
         if (currentAmmo <= 0 || (Input.GetKeyDown(KeyCode.R) && currentAmmo < currentWeapon.maxAmmo))
         {
             StartCoroutine(Reload());
             return;
         }
 
-       
         bool isShooting = currentWeapon.isAutomatic ? Input.GetMouseButton(0) : Input.GetMouseButtonDown(0);
 
         if (isShooting && Time.time >= nextFireTime)
@@ -74,24 +77,17 @@ public class Turret : MonoBehaviour
     {
         currentAmmo--;
         UpdateUI();
-
-     
         AudioManager.Instance.Play(currentWeapon.shootSoundName, 0.07f);
         GameObject firedBullet = Instantiate(currentWeapon.bulletPrefab, firePoint.position, firePoint.rotation);
         
-     
         Bullet bulletScript = firedBullet.GetComponent<Bullet>();
-        if (bulletScript != null)
-        {
-            bulletScript.damage = currentWeapon.damage;
-        }
+        if (bulletScript != null) bulletScript.damage = currentWeapon.damage;
     }
 
     IEnumerator Reload()
     {
         isReloading = true;
         AudioManager.Instance.Play("ReloadStart");
-
         reloadSlider.gameObject.SetActive(true);
         reloadSlider.maxValue = currentWeapon.reloadTime; 
         reloadSlider.value = 0;
@@ -105,7 +101,6 @@ public class Turret : MonoBehaviour
         }
 
         AudioManager.Instance.Play("ReloadEnd");
-
         currentAmmo = currentWeapon.maxAmmo; 
         isReloading = false;
         reloadSlider.gameObject.SetActive(false);
@@ -114,7 +109,6 @@ public class Turret : MonoBehaviour
 
     public void UpdateUI()
     {
-       
         int displayAmmo = Mathf.Max(0, currentAmmo);
         if (currentWeapon != null)
             ammoText.text = displayAmmo + " / " + currentWeapon.maxAmmo;

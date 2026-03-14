@@ -153,24 +153,44 @@ MonoBehaviour:
   tankZombie: {fileID: 5539211793060980015, guid: 5184ec198b24dcc43be705bab21b2484, type: 3}
   waves:
   - waveName: First
-    normalZombieCount: 10
+    normalZombieCount: 6
     fastZombieCount: 0
-    tankZombieCount: 3
+    tankZombieCount: 4
     spawnRate: 1
   - waveName: Second
-    normalZombieCount: 15
-    fastZombieCount: 0
-    tankZombieCount: 1
+    normalZombieCount: 8
+    fastZombieCount: 2
+    tankZombieCount: 5
     spawnRate: 1
   - waveName: Third
-    normalZombieCount: 15
-    fastZombieCount: 0
-    tankZombieCount: 2
+    normalZombieCount: 11
+    fastZombieCount: 5
+    tankZombieCount: 6
     spawnRate: 1
-  - waveName: Final
-    normalZombieCount: 25
+  - waveName: Final1
+    normalZombieCount: 7
     fastZombieCount: 5
     tankZombieCount: 5
+    spawnRate: 0.7
+  - waveName: 5
+    normalZombieCount: 10
+    fastZombieCount: 7
+    tankZombieCount: 10
+    spawnRate: 0.7
+  - waveName: 8
+    normalZombieCount: 15
+    fastZombieCount: 11
+    tankZombieCount: 11
+    spawnRate: 0.7
+  - waveName: 6
+    normalZombieCount: 16
+    fastZombieCount: 10
+    tankZombieCount: 11
+    spawnRate: 0.7
+  - waveName: 7
+    normalZombieCount: 20
+    fastZombieCount: 20
+    tankZombieCount: 20
     spawnRate: 0.7
   timeBetweenWaves: 5
   minY: -7
@@ -400,6 +420,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &286206883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5657870476028769580, guid: ef41a95e929e8d849abf948915262cee, type: 3}
+  m_PrefabInstance: {fileID: 511488856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &332350683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -480,6 +511,10 @@ PrefabInstance:
       propertyPath: currentWeapon
       value: 
       objectReference: {fileID: 11400000, guid: f7c469f6e4efb024ebe377a6701e9ef2, type: 2}
+    - target: {fileID: 419071482055952720, guid: dce5059ae1b6c0243af16f36344880cc, type: 3}
+      propertyPath: automaticWeaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: ef360285378456c42a96d5cebd1fba26, type: 2}
     - target: {fileID: 1020897261331427304, guid: dce5059ae1b6c0243af16f36344880cc, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.196
@@ -1437,6 +1472,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &480338331 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4142255792190123649, guid: ef41a95e929e8d849abf948915262cee, type: 3}
+  m_PrefabInstance: {fileID: 511488856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &511488856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1727,6 +1773,22 @@ MonoBehaviour:
     pitch: 1
   - name: ShockwavePulse
     clip: {fileID: 8300000, guid: b71a1ee0e82e6ca4796eec70fa5f2ea1, type: 3}
+    volume: 0.5
+    pitch: 1
+  - name: NukeSiren
+    clip: {fileID: 8300000, guid: f07943f608c289d4298418c71755b915, type: 3}
+    volume: 0.5
+    pitch: 1
+  - name: ThrowGrenade
+    clip: {fileID: 8300000, guid: 07bbab232dc3512439189f3a4374981e, type: 3}
+    volume: 0.5
+    pitch: 1
+  - name: FirePower
+    clip: {fileID: 8300000, guid: 77543d819206a7f428083f31691e6365, type: 3}
+    volume: 0.5
+    pitch: 1
+  - name: FreezePower
+    clip: {fileID: 8300000, guid: cca50439118e4f7419ad1f57f3d10348, type: 3}
     volume: 0.5
     pitch: 1
   backgroundMusic: {fileID: 8300000, guid: a8053ca20be02f14bb36e8555e36bd9b, type: 3}
@@ -3864,6 +3926,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 546965877}
     - target: {fileID: 5120744287498834752, guid: 0316690c70dcf1142862e84c9336fc80, type: 3}
+      propertyPath: victoryActionBtn
+      value: 
+      objectReference: {fileID: 1719922366}
+    - target: {fileID: 5120744287498834752, guid: 0316690c70dcf1142862e84c9336fc80, type: 3}
+      propertyPath: victoryTitleText
+      value: 
+      objectReference: {fileID: 480338331}
+    - target: {fileID: 5120744287498834752, guid: 0316690c70dcf1142862e84c9336fc80, type: 3}
+      propertyPath: victoryButtonText
+      value: 
+      objectReference: {fileID: 286206883}
+    - target: {fileID: 5120744287498834752, guid: 0316690c70dcf1142862e84c9336fc80, type: 3}
       propertyPath: victoryRestartBtn
       value: 
       objectReference: {fileID: 1719922366}
@@ -4548,9 +4622,12 @@ MonoBehaviour:
   selectedPowerUp: 0
   fireAreaPrefab: {fileID: 3052345830712544436, guid: 982413e6702e5244cb323834b970721f, type: 3}
   fireSpawnPosition: {x: 0, y: -7, z: 0}
-  explosionEffect: {fileID: 0}
-  grenadeRadius: 3
-  grenadeDamage: 50
+  grenadePrefab: {fileID: 0}
+  grenadeSpawnHeight: 10
+  freezeSound: FreezePower
+  fireSound: FirePower
+  throwSound: ThrowGrenade
+  instaKillSound: NukeSiren
 --- !u!4 &2103918560
 Transform:
   m_ObjectHideFlags: 0
