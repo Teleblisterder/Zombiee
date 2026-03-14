@@ -1,0 +1,1396 @@
+fileFormatVersion: 2
+guid: 687196a19bfccf54193567dbdf1d42f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7012221011974142893
+    second: Bomb-explosion-animation-sprite_0
+  - first:
+      213: 8000359180278808925
+    second: Bomb-explosion-animation-sprite_1
+  - first:
+      213: 8281594962323956380
+    second: Bomb-explosion-animation-sprite_2
+  - first:
+      213: -8606301360966422265
+    second: Bomb-explosion-animation-sprite_3
+  - first:
+      213: -6271498245268345402
+    second: Bomb-explosion-animation-sprite_4
+  - first:
+      213: -2395311814415878988
+    second: Bomb-explosion-animation-sprite_5
+  - first:
+      213: 4815574721091418865
+    second: Bomb-explosion-animation-sprite_6
+  - first:
+      213: 1600233575426563602
+    second: Bomb-explosion-animation-sprite_7
+  - first:
+      213: 7977237186523618182
+    second: Bomb-explosion-animation-sprite_8
+  - first:
+      213: -60166424712210443
+    second: Bomb-explosion-animation-sprite_9
+  - first:
+      213: 2862773435281084785
+    second: Bomb-explosion-animation-sprite_10
+  - first:
+      213: -993198267321121706
+    second: Bomb-explosion-animation-sprite_11
+  - first:
+      213: 2700898524531555490
+    second: Bomb-explosion-animation-sprite_12
+  - first:
+      213: 3980023896739939333
+    second: Bomb-explosion-animation-sprite_13
+  - first:
+      213: 7945958791981257210
+    second: Bomb-explosion-animation-sprite_14
+  - first:
+      213: 6647535520878586155
+    second: Bomb-explosion-animation-sprite_15
+  - first:
+      213: -4879282930783056029
+    second: Bomb-explosion-animation-sprite_16
+  - first:
+      213: -2714511153790261471
+    second: Bomb-explosion-animation-sprite_17
+  - first:
+      213: -8745918587701733657
+    second: Bomb-explosion-animation-sprite_18
+  - first:
+      213: -26397831223259644
+    second: Bomb-explosion-animation-sprite_19
+  - first:
+      213: 2459869341458788548
+    second: Bomb-explosion-animation-sprite_20
+  - first:
+      213: -2788968488389522082
+    second: Bomb-explosion-animation-sprite_21
+  - first:
+      213: -7260566568714488175
+    second: Bomb-explosion-animation-sprite_22
+  - first:
+      213: 5273655197797955019
+    second: Bomb-explosion-animation-sprite_23
+  - first:
+      213: 3631773695335066967
+    second: Bomb-explosion-animation-sprite_24
+  - first:
+      213: -936978360007961564
+    second: Bomb-explosion-animation-sprite_25
+  - first:
+      213: 7690095585718517624
+    second: Bomb-explosion-animation-sprite_26
+  - first:
+      213: -6221459694854717874
+    second: Bomb-explosion-animation-sprite_27
+  - first:
+      213: 5984669105306861319
+    second: Bomb-explosion-animation-sprite_28
+  - first:
+      213: -3787832512560009114
+    second: Bomb-explosion-animation-sprite_29
+  - first:
+      213: 625627622162134620
+    second: Bomb-explosion-animation-sprite_30
+  - first:
+      213: 1016768545374477549
+    second: Bomb-explosion-animation-sprite_31
+  - first:
+      213: 6659452253820924530
+    second: Bomb-explosion-animation-sprite_32
+  - first:
+      213: 2387064432642101170
+    second: Bomb-explosion-animation-sprite_33
+  - first:
+      213: 5847556832335742576
+    second: Bomb-explosion-animation-sprite_34
+  - first:
+      213: -6346917689357493486
+    second: Bomb-explosion-animation-sprite_35
+  - first:
+      213: -3917155053163746088
+    second: Bomb-explosion-animation-sprite_36
+  - first:
+      213: 8304509271119993372
+    second: Bomb-explosion-animation-sprite_37
+  - first:
+      213: 3554714315228274079
+    second: Bomb-explosion-animation-sprite_38
+  - first:
+      213: 3678254761072191947
+    second: Bomb-explosion-animation-sprite_39
+  - first:
+      213: 206030559664080152
+    second: Bomb-explosion-animation-sprite_40
+  - first:
+      213: -4397258877252661789
+    second: Bomb-explosion-animation-sprite_41
+  - first:
+      213: -2717041704383114567
+    second: Bomb-explosion-animation-sprite_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 83
+        width: 287
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35440c654269fae90800000000000000
+      internalID: -7012221011974142893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 54
+        width: 335
+        height: 355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d51cd08694cf60f60800000000000000
+      internalID: 8000359180278808925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 51
+        width: 381
+        height: 374
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92ebfe8db22ee270800000000000000
+      internalID: 8281594962323956380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 341
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701b2a5a286409880800000000000000
+      internalID: -8606301360966422265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 131
+        width: 218
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd6b41e29927f8a0800000000000000
+      internalID: -6271498245268345402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_5
+      rect:
+        serializedVersion: 2
+        x: 2421
+        y: 314
+        width: 56
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4f17f789422ced0800000000000000
+      internalID: -2395311814415878988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_6
+      rect:
+        serializedVersion: 2
+        x: 2686
+        y: 222
+        width: 219
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa3100e1bb54d240800000000000000
+      internalID: 4815574721091418865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_7
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 87
+        width: 232
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e14fc55fb253610800000000000000
+      internalID: 1600233575426563602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 327
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68bd6c7b4f6d4be60800000000000000
+      internalID: 7977237186523618182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_9
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 309
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f79f9b94fe3a2ff0800000000000000
+      internalID: -60166424712210443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_10
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 307
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1719a52954d9ab720800000000000000
+      internalID: 2862773435281084785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_11
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 285
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6548ac420737732f0800000000000000
+      internalID: -993198267321121706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_12
+      rect:
+        serializedVersion: 2
+        x: 2493
+        y: 292
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac7419e5e48b7520800000000000000
+      internalID: 2700898524531555490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_13
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 277
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50400c2a5a2eb3730800000000000000
+      internalID: 3980023896739939333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_14
+      rect:
+        serializedVersion: 2
+        x: 2261
+        y: 237
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af15febfb67b54e60800000000000000
+      internalID: 7945958791981257210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_15
+      rect:
+        serializedVersion: 2
+        x: 2658
+        y: 252
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2962c9065ac04c50800000000000000
+      internalID: 6647535520878586155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_16
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 261
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f8c08a60e494cb0800000000000000
+      internalID: -4879282930783056029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_17
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 224
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127ee7bdc7e145ad0800000000000000
+      internalID: -2714511153790261471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_18
+      rect:
+        serializedVersion: 2
+        x: 2902
+        y: 233
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e65d81e16140a680800000000000000
+      internalID: -8745918587701733657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_19
+      rect:
+        serializedVersion: 2
+        x: 2930
+        y: 244
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ec817ff4732aff0800000000000000
+      internalID: -26397831223259644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_20
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 247
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c076831226332220800000000000000
+      internalID: 2459869341458788548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_21
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 126
+        width: 143
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5dc8c7bfe79b49d0800000000000000
+      internalID: -2788968488389522082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_22
+      rect:
+        serializedVersion: 2
+        x: 2686
+        y: 179
+        width: 62
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19632b38c294d3b90800000000000000
+      internalID: -7260566568714488175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_23
+      rect:
+        serializedVersion: 2
+        x: 2254
+        y: 226
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc5b3ac1679cf2940800000000000000
+      internalID: 5273655197797955019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_24
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 170
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ded071fe6a66230800000000000000
+      internalID: 3631773695335066967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_25
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 205
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4245f79552f2ff2f0800000000000000
+      internalID: -936978360007961564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_26
+      rect:
+        serializedVersion: 2
+        x: 2819
+        y: 130
+        width: 102
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f3d8bf035b8ba60800000000000000
+      internalID: 7690095585718517624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_27
+      rect:
+        serializedVersion: 2
+        x: 2489
+        y: 156
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e36c7ce5fe8a9a0800000000000000
+      internalID: -6221459694854717874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_28
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 166
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ff118d7d0dd0350800000000000000
+      internalID: 5984669105306861319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_29
+      rect:
+        serializedVersion: 2
+        x: 2725
+        y: 125
+        width: 74
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6607f2c066aee6bc0800000000000000
+      internalID: -3787832512560009114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_30
+      rect:
+        serializedVersion: 2
+        x: 2915
+        y: 163
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5675a4f10daea800800000000000000
+      internalID: 625627622162134620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_31
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 83
+        width: 110
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dec16ddda994c1e00800000000000000
+      internalID: 1016768545374477549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_32
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 143
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 272bba3aa802b6c50800000000000000
+      internalID: 6659452253820924530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_33
+      rect:
+        serializedVersion: 2
+        x: 2690
+        y: 151
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf0a9b447e802120800000000000000
+      internalID: 2387064432642101170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_34
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 115
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076c74315f1b62150800000000000000
+      internalID: 5847556832335742576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_35
+      rect:
+        serializedVersion: 2
+        x: 2422
+        y: 96
+        width: 72
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b143b2df73be7a0800000000000000
+      internalID: -6346917689357493486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_36
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 120
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc6c0eab3873a9c0800000000000000
+      internalID: -3917155053163746088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_37
+      rect:
+        serializedVersion: 2
+        x: 2829
+        y: 99
+        width: 66
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a9b03de2b8f3370800000000000000
+      internalID: 8304509271119993372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_38
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 100
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9d5d2506d1e45130800000000000000
+      internalID: 3554714315228274079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_39
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 79
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc9e81b8739cb0330800000000000000
+      internalID: 3678254761072191947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_40
+      rect:
+        serializedVersion: 2
+        x: 2766
+        y: 93
+        width: 40
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81507a1d3b7fbd200800000000000000
+      internalID: 206030559664080152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_41
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 74
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed0ceb495cc9f2c0800000000000000
+      internalID: -4397258877252661789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_42
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 66
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b2925227f02b4ad0800000000000000
+      internalID: -2717041704383114567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_43
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 89
+        width: 188
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 735286c4eab24ea4eb783eb431cdd69a
+      internalID: -673068672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_44
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 65
+        width: 299
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ecca79081ecb064a9aa29fc1247d2fa
+      internalID: -991046161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_45
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 50
+        width: 339
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd80c4bd5a945c41a27d54e6ff3b7e2
+      internalID: -1227196645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_46
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 29
+        width: 382
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913ed46b8356d0b45894b463df4f6035
+      internalID: 672403153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_47
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 35
+        width: 414
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2086357d20840af49921d259a96069da
+      internalID: 272644407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_48
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 71
+        width: 337
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a81560a40829640b0931fa33082d28
+      internalID: -1338159364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb-explosion-animation-sprite_49
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 78
+        width: 335
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a5f44dcd4623747840f0396b78f260
+      internalID: -1747863746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1bb2249220db84f42a48410f39bae997
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bomb-explosion-animation-sprite_0: -7012221011974142893
+      Bomb-explosion-animation-sprite_1: 8000359180278808925
+      Bomb-explosion-animation-sprite_10: 2862773435281084785
+      Bomb-explosion-animation-sprite_11: -993198267321121706
+      Bomb-explosion-animation-sprite_12: 2700898524531555490
+      Bomb-explosion-animation-sprite_13: 3980023896739939333
+      Bomb-explosion-animation-sprite_14: 7945958791981257210
+      Bomb-explosion-animation-sprite_15: 6647535520878586155
+      Bomb-explosion-animation-sprite_16: -4879282930783056029
+      Bomb-explosion-animation-sprite_17: -2714511153790261471
+      Bomb-explosion-animation-sprite_18: -8745918587701733657
+      Bomb-explosion-animation-sprite_19: -26397831223259644
+      Bomb-explosion-animation-sprite_2: 8281594962323956380
+      Bomb-explosion-animation-sprite_20: 2459869341458788548
+      Bomb-explosion-animation-sprite_21: -2788968488389522082
+      Bomb-explosion-animation-sprite_22: -7260566568714488175
+      Bomb-explosion-animation-sprite_23: 5273655197797955019
+      Bomb-explosion-animation-sprite_24: 3631773695335066967
+      Bomb-explosion-animation-sprite_25: -936978360007961564
+      Bomb-explosion-animation-sprite_26: 7690095585718517624
+      Bomb-explosion-animation-sprite_27: -6221459694854717874
+      Bomb-explosion-animation-sprite_28: 5984669105306861319
+      Bomb-explosion-animation-sprite_29: -3787832512560009114
+      Bomb-explosion-animation-sprite_3: -8606301360966422265
+      Bomb-explosion-animation-sprite_30: 625627622162134620
+      Bomb-explosion-animation-sprite_31: 1016768545374477549
+      Bomb-explosion-animation-sprite_32: 6659452253820924530
+      Bomb-explosion-animation-sprite_33: 2387064432642101170
+      Bomb-explosion-animation-sprite_34: 5847556832335742576
+      Bomb-explosion-animation-sprite_35: -6346917689357493486
+      Bomb-explosion-animation-sprite_36: -3917155053163746088
+      Bomb-explosion-animation-sprite_37: 8304509271119993372
+      Bomb-explosion-animation-sprite_38: 3554714315228274079
+      Bomb-explosion-animation-sprite_39: 3678254761072191947
+      Bomb-explosion-animation-sprite_4: -6271498245268345402
+      Bomb-explosion-animation-sprite_40: 206030559664080152
+      Bomb-explosion-animation-sprite_41: -4397258877252661789
+      Bomb-explosion-animation-sprite_42: -2717041704383114567
+      Bomb-explosion-animation-sprite_43: -673068672
+      Bomb-explosion-animation-sprite_44: -991046161
+      Bomb-explosion-animation-sprite_45: -1227196645
+      Bomb-explosion-animation-sprite_46: 672403153
+      Bomb-explosion-animation-sprite_47: 272644407
+      Bomb-explosion-animation-sprite_48: -1338159364
+      Bomb-explosion-animation-sprite_49: -1747863746
+      Bomb-explosion-animation-sprite_5: -2395311814415878988
+      Bomb-explosion-animation-sprite_6: 4815574721091418865
+      Bomb-explosion-animation-sprite_7: 1600233575426563602
+      Bomb-explosion-animation-sprite_8: 7977237186523618182
+      Bomb-explosion-animation-sprite_9: -60166424712210443
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
