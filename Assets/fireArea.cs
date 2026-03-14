@@ -18,8 +18,13 @@ public class FireArea : MonoBehaviour
         Zombie z = collision.GetComponent<Zombie>();
         if (z != null)
         {
+<<<<<<< Updated upstream
             // Time.deltaTime ile saniyeye bölerek yumuþak bir hasar veriyoruz (DoT)
             z.TakeDamage(damagePerSecond * Time.deltaTime);
+=======
+           
+            z.TakeDamage(damagePerSecond * Time.deltaTime, false);
+>>>>>>> Stashed changes
         }
     }
 }

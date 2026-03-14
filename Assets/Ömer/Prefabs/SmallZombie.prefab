@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3623879936743873015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6136484759490470099}
+  m_Layer: 0
+  m_Name: head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6136484759490470099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623879936743873015}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.31, y: 1.65, z: 0}
+  m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1.6666665}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7549509812965801160}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5539211793060980015
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,9 +61,16 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.21, y: -3.4912, z: 0}
+<<<<<<< Updated upstream:Assets/Ömer/Prefabs/SmallZombie.prefab
   m_LocalScale: {x: 1.3778142, y: 1.7106587, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+=======
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 6136484759490470099}
+>>>>>>> Stashed changes:Assets/Ömer/Prefabs/SmallZombie2.prefab
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3680283981557023000
@@ -148,11 +186,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95aeb0cdf85a59046916cd290dc5ac2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Assets/Ömer/Prefabs/SmallZombie.prefab
   health: 4
+=======
+  health: 2
+  damageToTurret: 1
+  Ztype: 0
+  knockbackForce: 0.4
+>>>>>>> Stashed changes:Assets/Ömer/Prefabs/SmallZombie2.prefab
   moveSpeed: 3
   dalgaGenligi: 0.2
   dalgaFrekansi: 2
   Brain: {fileID: 1515463982421888334, guid: 3d10ce74ddc6d2540ba1c5af3a87574d, type: 3}
+  head: {fileID: 3623879936743873015}
+  deathParticlePrefab: {fileID: 1230506701815004177, guid: 51aa7ba05e5d8d248bf93aadf5b6ca8a, type: 3}
+  isFrozen: 0
 --- !u!50 &-8485168477213524425
 Rigidbody2D:
   serializedVersion: 5

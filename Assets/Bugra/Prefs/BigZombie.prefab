@@ -148,11 +148,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95aeb0cdf85a59046916cd290dc5ac2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   health: 6
+=======
+  health: 10
+  damageToTurret: 10
+  Ztype: 2
+  knockbackForce: 0
+>>>>>>> Stashed changes
   moveSpeed: 1
   dalgaGenligi: 0.2
   dalgaFrekansi: 2
   Brain: {fileID: 1515463982421888334, guid: 3d10ce74ddc6d2540ba1c5af3a87574d, type: 3}
+  isFrozen: 0
 --- !u!50 &-7698422984934019812
 Rigidbody2D:
   serializedVersion: 5

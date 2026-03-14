@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3926367875897431253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451785866499232119}
+  m_Layer: 0
+  m_Name: head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1451785866499232119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3926367875897431253}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.336, y: 1.688, z: 0}
+  m_LocalScale: {x: 0.65346664, y: 0.65346664, z: 0.65346664}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7549509812965801160}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5539211793060980015
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,9 +61,16 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.21, y: -2.74, z: 0}
+<<<<<<< Updated upstream:Assets/Ömer/Prefabs/BigZombie.prefab
   m_LocalScale: {x: 1.7870251, y: 4.167401, z: 1.297}
   m_ConstrainProportionsScale: 0
   m_Children: []
+=======
+  m_LocalScale: {x: 1.5303, y: 1.5303, z: 1.5303}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1451785866499232119}
+>>>>>>> Stashed changes:Assets/Ömer/Prefabs/BigZombie2.prefab
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3680283981557023000
@@ -148,11 +186,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95aeb0cdf85a59046916cd290dc5ac2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Assets/Ömer/Prefabs/BigZombie.prefab
   health: 15
   moveSpeed: 0.6
+=======
+  health: 10
+  damageToTurret: 10
+  Ztype: 2
+  knockbackForce: 0
+  moveSpeed: 1
+>>>>>>> Stashed changes:Assets/Ömer/Prefabs/BigZombie2.prefab
   dalgaGenligi: 0.2
   dalgaFrekansi: 2
   Brain: {fileID: 1515463982421888334, guid: 3d10ce74ddc6d2540ba1c5af3a87574d, type: 3}
+  head: {fileID: 3926367875897431253}
+  deathParticlePrefab: {fileID: 1230506701815004177, guid: 51aa7ba05e5d8d248bf93aadf5b6ca8a, type: 3}
+  isFrozen: 0
 --- !u!50 &-7698422984934019812
 Rigidbody2D:
   serializedVersion: 5

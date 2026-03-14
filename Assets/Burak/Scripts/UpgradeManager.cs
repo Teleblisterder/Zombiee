@@ -18,6 +18,13 @@ public class UpgradeManager : MonoBehaviour
     public int fireRateCost = 50;
     public int ammoCost = 75;
     public int reloadCost = 60;
+    public static UpgradeManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
 
     void Start()
     {
