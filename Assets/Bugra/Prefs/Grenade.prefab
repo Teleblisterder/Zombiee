@@ -105,4 +105,4 @@ MonoBehaviour:
   explosionRadius: 5
   damage: 50
   explosionEffect: {fileID: 7836695383352414403, guid: 09993fa89fed04748ae3c82ef8ab4897, type: 3}
-  explosionSound: Explosion
+  explosionSound: Explasion

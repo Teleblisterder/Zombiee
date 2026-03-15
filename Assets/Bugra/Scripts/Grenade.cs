@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-    [HideInInspector] public Vector2 targetPosition; // Nereye d??ece?i (Manager'dan gelecek)
+    [HideInInspector] public Vector2 targetPosition;
 
-    [Header("Bomba Ayarlar?")]
-    public float fallSpeed = 10f;
-    public float explosionRadius = 3f;
+    [Header("Bomba Ayarları")]
+    public float fallSpeed = 12f; // Biraz hızlandırdım daha tok dursun
+    public float explosionRadius = 4f;
     public float damage = 50f;
     public GameObject explosionEffect;
-    public string explosionSound = "Explosion"; // AudioManager'daki sesin ad?
+    public string explosionSound = "Explosion"; 
 
     void Update()
     {
-        // Bombay? hedefe do?ru hareket ettir
+        // Bombayı hedefe doğru hareket ettir
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, fallSpeed * Time.deltaTime);
 
-        // Hedefe ula?t?ysa patla
+        // Hedefe ulaştıysa patla
         if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
         {
             Explode();
@@ -25,31 +25,33 @@ public class Grenade : MonoBehaviour
 
     void Explode()
     {
-        // 1. G?rsel Efekt
+        // 1. Görsel Efekt
         if (explosionEffect != null)
         {
             GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 0.6f);
+            Destroy(effect, 1f);
         }
 
-
-        // 2. Ses Efekti (Di?er dev'in sistemiyle)
+        // 2. Ses
         if (AudioManager.Instance != null)
             AudioManager.Instance.Play(explosionSound);
 
-        // 3. Alan Hasar?
+        // 3. Alan Hasarı (Sadece zombilere vurduğundan emin oluyoruz)
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D col in colliders)
         {
-            Zombie z = col.GetComponent<Zombie>();
-            if (z != null) z.TakeDamage(damage);
+            if (col.CompareTag("Enemy"))
+            {
+                Zombie z = col.GetComponent<Zombie>();
+                // Bombadan kaçış yok, knockback her zaman aktif (true)
+                if (z != null) z.TakeDamage(damage, true);
+            }
         }
 
-        // 4. Kameray? Hafif Sars (Opsiyonel ama ?ok tatl? olur)
+        // 4. Kamera Sarsıntısı
         if (PowerUpManager.Instance != null)
-            PowerUpManager.Instance.ShakeCamera(0.2f, 0.1f);
-
-        // Bombay? yok et
+            PowerUpManager.Instance.ShakeCamera(0.4f, 0.3f);
+        Debug.Log("BOOM! Patlama gerçekleşti.");
         Destroy(gameObject);
     }
 }

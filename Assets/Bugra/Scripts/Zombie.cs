@@ -153,8 +153,8 @@ public class Zombie : MonoBehaviour
     public void GetPushedBack(float pushAmount)
     {
         isAttacking = false;
+        
         transform.position = new Vector3(transform.position.x + pushAmount, transform.position.y, transform.position.z);
-        startY = transform.position.y;
     }
 
     void Die()
@@ -164,7 +164,7 @@ public class Zombie : MonoBehaviour
             Instantiate(Brain, transform.position, Quaternion.identity);
         }
 
-        // Ölüm partikülünü kafa hizasında oluştur
+       
         if (deathParticlePrefab != null && head != null)
         {
             Instantiate(deathParticlePrefab, head.transform.position, Quaternion.identity);
@@ -204,7 +204,7 @@ public class Zombie : MonoBehaviour
             if (sr != null) sr.color = Color.red;
             yield return new WaitForSeconds(0.1f);
 
-            // YENİ: Eğer donmuşsa tekrar maviye dön, donmamışsa beyaza dön!
+            
             if (sr != null) sr.color = isFrozen ? Color.blue : Color.white;
 
             yield return new WaitForSeconds(0.1f);
